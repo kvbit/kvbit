@@ -186,7 +186,7 @@ def generate() -> str:
         img = apply_thunder_shake(img, intensity)
         frames.append(img)
 
-    out = os.path.join(os.path.dirname(__file__), "..", "assets", "kvbit-matrix-rain.gif")
+    out = os.path.join(os.path.dirname(__file__), "..", "assets", "kvbit-thunder-header.gif")
     os.makedirs(os.path.dirname(out), exist_ok=True)
     frames[0].save(
         out,

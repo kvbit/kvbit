@@ -1,5 +1,10 @@
 <p align="center">
-  <img src="./assets/kvbit-matrix-rain.gif" alt="KVBIT — Matrix rain" width="100%" />
+  <!-- cache-busted thunder header — do not rename without updating URL -->
+  <img
+    src="https://cdn.jsdelivr.net/gh/kvbit/kvbit@main/assets/kvbit-thunder-header.gif"
+    alt="KVBIT — Matrix rain with lightning"
+    width="100%"
+  />
 </p>
 
 <p align="center">
