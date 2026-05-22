@@ -1,7 +1,7 @@
 <p align="center">
   <img
-    src="https://raw.githubusercontent.com/kvbit/kvbit/refs/heads/main/assets/kvbit-thunder-header.gif"
-    alt="KVBIT — Matrix rain with lightning"
+    src="https://raw.githubusercontent.com/kvbit/kvbit/refs/heads/main/assets/kvbit-thunder-header.gif?v=machine-ascii"
+    alt="KVBIT — Machine style ASCII with thunder transitions"
     width="100%"
   />
 </p>

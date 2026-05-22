@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate KVBIT Matrix rain GIF with dramatic lightning + thunder."""
+"""Generate KVBIT header GIF — Machine/Finch style ASCII + thunder transitions."""
 
 from __future__ import annotations
 
@@ -9,20 +9,38 @@ from dataclasses import dataclass, field
 
 from PIL import Image, ImageDraw, ImageFont
 
-W, H = 900, 220
-FRAMES = 54
-FPS_MS = 85
-MATRIX_CHARS = (
-    "ｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜｦﾝ"
-    "ｱｲｳｴｵABCD0123456789<>[]{}|/\\=:*#"
-)
-COL_W = 16
-COLS = W // COL_W
-TITLE = "KVBIT"
+W, H = 900, 240
+FRAMES = 60
+FPS_MS = 90
 
-# Each strike = 6 frames: rumble → build → PEAK → peak2 → fade → afterglow
-STRIKES = [8, 24, 40]
-STRIKE_CURVE = [0.15, 0.45, 1.0, 0.95, 0.55, 0.2]
+# Finch / Machine palette
+BG = (10, 14, 20)
+RAIN_HEAD = (180, 220, 255)
+RAIN_MID = (90, 150, 200)
+RAIN_TAIL = (35, 55, 75)
+ASCII_IDLE = (88, 166, 255)
+ASCII_GLOW = (45, 100, 160)
+ASCII_GLITCH = (140, 200, 255)
+FLASH_WHITE = (255, 255, 255)
+
+ASCII_KVBIT = [
+    "██╗  ██╗██╗   ██╗██████╗ ██╗████████╗",
+    "██║ ██╔╝██║   ██║██╔══██╗██║╚══██╔══╝",
+    "█████╔╝ ██║   ██║██████╔╝██║   ██║",
+    "██╔═██╗ ╚██╗ ██╔╝██╔══██╗██║   ██║",
+    "██║  ██╗ ╚████╔╝ ██████╔╝██║   ██║",
+    "╚═╝  ╚═╝  ╚═══╝  ╚═════╝ ╚═╝   ╚═╝",
+]
+
+STREAM_CHARS = "01アイウエオカキクケコ0123456789ABCDEF#[]{}|/\\<>"
+
+# strike start frame → 7-frame transition curve
+STRIKES = [10, 30, 48]
+# idle → rumble → charge → FLASH → hold → decay → settle
+STRIKE_CURVE = [0.0, 0.2, 0.5, 1.0, 0.85, 0.45, 0.15]
+
+COL_W = 14
+COLS = W // COL_W
 
 
 @dataclass
@@ -33,157 +51,220 @@ class Column:
     chars: list[str] = field(default_factory=list)
 
     def reset(self) -> None:
-        self.y = random.uniform(-H * 1.2, -40)
-        self.speed = random.uniform(7, 15)
-        self.length = random.randint(14, 30)
-        self.chars = [random.choice(MATRIX_CHARS) for _ in range(self.length)]
+        self.y = random.uniform(-H, -20)
+        self.speed = random.uniform(5, 11)
+        self.length = random.randint(10, 22)
+        self.chars = [random.choice(STREAM_CHARS) for _ in range(self.length)]
 
     def tick(self) -> None:
         self.y += self.speed
-        if random.random() < 0.4:
-            self.chars[0] = random.choice(MATRIX_CHARS)
-        if random.random() < 0.1 and len(self.chars) > 2:
-            self.chars[random.randint(1, 4)] = random.choice(MATRIX_CHARS)
-        if self.y - self.length * COL_W > H + 50:
+        if random.random() < 0.3:
+            self.chars[0] = random.choice(STREAM_CHARS)
+        if self.y - self.length * COL_W > H + 30:
             self.reset()
 
 
-def load_fonts() -> tuple[ImageFont.FreeTypeFont, ImageFont.FreeTypeFont]:
+def load_fonts() -> tuple[ImageFont.FreeTypeFont, ImageFont.FreeTypeFont, ImageFont.FreeTypeFont]:
     for path in (
-        "/System/Library/Fonts/Supplemental/Arial Unicode.ttf",
         "/System/Library/Fonts/Menlo.ttc",
+        "/System/Library/Fonts/Supplemental/Arial Unicode.ttf",
         "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf",
     ):
         if os.path.exists(path):
-            return ImageFont.truetype(path, 15), ImageFont.truetype(path, 68)
+            return (
+                ImageFont.truetype(path, 12),
+                ImageFont.truetype(path, 11),
+                ImageFont.truetype(path, 9),
+            )
     d = ImageFont.load_default()
-    return d, d
+    return d, d, d
 
 
-def strike_intensity(frame: int) -> float:
+def strike_state(frame: int) -> tuple[float, str]:
     for start in STRIKES:
         offset = frame - start
         if 0 <= offset < len(STRIKE_CURVE):
-            return STRIKE_CURVE[offset]
-    return 0.0
+            intensity = STRIKE_CURVE[offset]
+            names = ["idle", "rumble", "charge", "flash", "hold", "decay", "settle"]
+            return intensity, names[offset]
+    return 0.0, "idle"
 
 
-def draw_rain(draw: ImageDraw.ImageDraw, columns: list[Column], font: ImageFont.FreeTypeFont, bright: float) -> None:
-    boost = int(80 * bright)
+def scramble_line(line: str, rate: float) -> str:
+    if rate <= 0:
+        return line
+    chars = list(line)
+    for i, ch in enumerate(chars):
+        if ch != " " and random.random() < rate * 0.35:
+            chars[i] = random.choice(STREAM_CHARS)
+    return "".join(chars)
+
+
+def draw_machine_rain(draw: ImageDraw.ImageDraw, columns: list[Column], font: ImageFont.FreeTypeFont, boost: float) -> None:
     for i, col in enumerate(columns):
-        x = i * COL_W + 3
+        x = i * COL_W + 2
         for j, ch in enumerate(col.chars):
             y = int(col.y - j * COL_W)
-            if y < -24 or y > H + 8:
+            if y < -20 or y > H:
                 continue
             if j == 0:
-                fill = (min(255, 200 + boost), 255, min(255, 220 + boost))
-            elif j == 1:
-                fill = (min(255, 100 + boost), 255, min(255, 140 + boost))
+                fill = RAIN_HEAD
+            elif j < 3:
+                fill = RAIN_MID
             else:
-                fade = max(0, 220 - j * 18) + boost
-                fill = (0, min(255, int(fade * 0.8)), min(255, int(fade * 0.25)))
+                t = max(0, 1 - j * 0.08)
+                fill = (
+                    int(RAIN_TAIL[0] + (RAIN_MID[0] - RAIN_TAIL[0]) * t * (1 + boost)),
+                    int(RAIN_TAIL[1] + (RAIN_MID[1] - RAIN_TAIL[1]) * t * (1 + boost)),
+                    int(RAIN_TAIL[2] + (RAIN_MID[2] - RAIN_TAIL[2]) * t * (1 + boost)),
+                )
             draw.text((x, y), ch, font=font, fill=fill)
 
 
-def draw_lightning_bolts(draw: ImageDraw.ImageDraw, intensity: float, center_x: int) -> None:
-    bolt_count = 5 + int(4 * intensity)
-    for _ in range(bolt_count):
-        x = center_x + random.randint(-220, 220)
-        points = [(x, 0)]
-        cy = 0
-        while cy < H * 0.95:
-            cy += random.randint(20, 42)
-            x += random.randint(-28, 28)
-            points.append((x, min(cy, H)))
-        width = max(2, int(2 + 6 * intensity))
-        core = (255, 255, 255)
-        glow = (120, 200, 255)
-        draw.line(points, fill=glow, width=width + 4)
-        draw.line(points, fill=core, width=width)
-        for px, py in points[::2]:
-            r = int(6 + 8 * intensity)
-            draw.ellipse((px - r, py - r, px + r, py + r), fill=(200, 230, 255))
+def draw_machine_iris(draw: ImageDraw.ImageDraw, alpha: float) -> None:
+    if alpha <= 0:
+        return
+    cx, cy = W // 2, H // 2
+    r = 72
+    color = (int(40 * alpha), int(70 * alpha), int(110 * alpha))
+    draw.ellipse((cx - r, cy - r, cx + r, cy + r), outline=color, width=1)
+    draw.ellipse((cx - r // 2, cy - r // 2, cx + r // 2, cy + r // 2), outline=color, width=1)
 
 
-def draw_kvbit(draw: ImageDraw.ImageDraw, font: ImageFont.FreeTypeFont, intensity: float) -> tuple[int, int, int, int]:
-    bbox = draw.textbbox((0, 0), TITLE, font=font)
-    tw, th = bbox[2] - bbox[0], bbox[3] - bbox[1]
-    tx, ty = (W - tw) // 2, (H - th) // 2 - 6
-
-    if intensity >= 0.9:
-        layers = [
-            (-6, 0, (80, 160, 255)),
-            (6, 0, (80, 160, 255)),
-            (0, -6, (80, 160, 255)),
-            (0, 6, (80, 160, 255)),
-            (-3, -3, (180, 220, 255)),
-            (3, 3, (180, 220, 255)),
-            (0, 0, (255, 255, 255)),
-        ]
-    elif intensity >= 0.4:
-        layers = [
-            (-4, 0, (0, 180, 255)),
-            (4, 0, (0, 180, 255)),
-            (0, 0, (220, 255, 255)),
-        ]
-    else:
-        layers = [
-            (-2, 0, (0, 120, 40)),
-            (2, 0, (0, 120, 40)),
-            (0, 0, (0, 255, 65)),
-        ]
-
-    for ox, oy, color in layers:
-        draw.text((tx + ox, ty + oy), TITLE, font=font, fill=color)
-
-    return tx, ty, tw, th
-
-
-def apply_screen_flash(img: Image.Image, intensity: float) -> Image.Image:
+def draw_scanlines(img: Image.Image, intensity: float) -> Image.Image:
     if intensity < 0.35:
         return img
-    white = Image.new("RGB", (W, H), (255, 255, 255))
-    blend = 0.25 + 0.65 * intensity
+    overlay = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    od = ImageDraw.Draw(overlay)
+    step = 4
+    alpha = int(40 + 80 * intensity)
+    for y in range(0, H, step):
+        od.line([(0, y), (W, y)], fill=(120, 180, 255, alpha), width=1)
+    return Image.alpha_composite(img.convert("RGBA"), overlay).convert("RGB")
+
+
+def draw_ascii_kvbit(
+    draw: ImageDraw.ImageDraw,
+    font: ImageFont.FreeTypeFont,
+    intensity: float,
+    phase: str,
+) -> tuple[int, int, int, int]:
+    line_h = 15
+    block_w = max(len(line) for line in ASCII_KVBIT) * 7
+    start_x = (W - block_w) // 2
+    start_y = (H - len(ASCII_KVBIT) * line_h) // 2
+
+    scramble = 0.0
+    if phase in ("charge", "flash"):
+        scramble = 0.4 + 0.5 * intensity
+    elif phase == "hold":
+        scramble = 0.25
+
+    # transition layers
+    layers: list[tuple[int, int, tuple[int, int, int]]] = []
+
+    if phase == "rumble":
+        layers = [(-2, 0, ASCII_GLOW), (2, 0, ASCII_GLOW), (0, 0, ASCII_IDLE)]
+    elif phase == "charge":
+        layers = [(-4, 0, ASCII_GLITCH), (4, 0, ASCII_GLITCH), (-2, 1, ASCII_GLOW), (0, 0, ASCII_IDLE)]
+    elif phase in ("flash", "hold"):
+        layers = [
+            (-6, 0, (60, 120, 200)),
+            (6, 0, (60, 120, 200)),
+            (-3, -2, (200, 230, 255)),
+            (3, 2, (200, 230, 255)),
+            (0, 0, FLASH_WHITE),
+        ]
+    elif phase == "decay":
+        layers = [(-2, 0, ASCII_GLITCH), (0, 0, (220, 240, 255)), (0, 0, ASCII_IDLE)]
+    elif phase == "settle":
+        layers = [(0, 0, (120, 190, 255)), (0, 0, ASCII_IDLE)]
+    else:
+        layers = [(-1, 0, ASCII_GLOW), (0, 0, ASCII_IDLE)]
+
+    for ox, oy, color in layers:
+        for i, line in enumerate(ASCII_KVBIT):
+            text = scramble_line(line, scramble) if color == FLASH_WHITE or phase in ("flash", "charge", "hold") else line
+            draw.text(
+                (start_x + ox, start_y + i * line_h + oy),
+                text,
+                font=font,
+                fill=color,
+            )
+
+    return start_x, start_y, block_w, len(ASCII_KVBIT) * line_h
+
+
+def draw_finch_bolts(draw: ImageDraw.ImageDraw, intensity: float, cx: int, cy: int) -> None:
+    if intensity < 0.4:
+        return
+    for _ in range(3 + int(3 * intensity)):
+        x = cx + random.randint(-200, 200)
+        points = [(x, 0)]
+        py = 0
+        while py < H:
+            py += random.randint(22, 38)
+            x += random.randint(-20, 20)
+            points.append((x, min(py, H)))
+        w = max(2, int(2 + 4 * intensity))
+        draw.line(points, fill=(70, 130, 200), width=w + 3)
+        draw.line(points, fill=(220, 240, 255), width=w)
+
+
+def apply_flash(img: Image.Image, intensity: float, phase: str) -> Image.Image:
+    if phase not in ("flash", "hold", "charge") or intensity < 0.45:
+        return img
+    white = Image.new("RGB", (W, H), (230, 240, 255))
+    blend = 0.15 + 0.55 * intensity if phase == "flash" else 0.1 + 0.35 * intensity
     return Image.blend(img, white, blend)
 
 
-def apply_thunder_shake(img: Image.Image, intensity: float) -> Image.Image:
-    if intensity < 0.5:
+def apply_shake(img: Image.Image, intensity: float, phase: str) -> Image.Image:
+    if phase not in ("flash", "hold", "rumble") or intensity < 0.5:
         return img
-    dx = random.randint(-12, 12)
-    dy = random.randint(-8, 8)
-    canvas = Image.new("RGB", (W, H), (0, 0, 0))
-    canvas.paste(img, (dx, dy))
-    return canvas
+    dx = random.randint(-10, 10) if phase == "flash" else random.randint(-5, 5)
+    dy = random.randint(-6, 6) if phase == "flash" else random.randint(-3, 3)
+    out = Image.new("RGB", (W, H), BG)
+    out.paste(img, (dx, dy))
+    return out
+
+
+def draw_hud(draw: ImageDraw.ImageDraw, font_sm: ImageFont.FreeTypeFont, phase: str) -> None:
+    label = "THE MACHINE · ADMIN MODE DISABLED"
+    draw.text((14, 10), label, font=font_sm, fill=(55, 75, 95))
+    if phase in ("charge", "flash", "hold"):
+        draw.text((14, 24), ">> SIGNAL INTERRUPT", font=font_sm, fill=(140, 190, 230))
 
 
 def generate() -> str:
-    font_rain, font_title = load_fonts()
+    font_rain, font_ascii, font_sm = load_fonts()
     columns = [Column(0, 0, 0) for _ in range(COLS)]
     for col in columns:
         col.reset()
-        col.y = random.uniform(-H, H)
+        col.y = random.uniform(-H, 0)
 
     frames: list[Image.Image] = []
-    center_x = W // 2
+    cx, cy = W // 2, H // 2
 
     for f in range(FRAMES):
         for col in columns:
             col.tick()
 
-        intensity = strike_intensity(f)
-        img = Image.new("RGB", (W, H), (0, 0, 0))
+        intensity, phase = strike_state(f)
+        img = Image.new("RGB", (W, H), BG)
         draw = ImageDraw.Draw(img)
 
-        draw_rain(draw, columns, font_rain, bright=intensity)
-        draw_kvbit(draw, font_title, intensity)
+        draw_machine_iris(draw, 0.35 + 0.4 * intensity)
+        draw_machine_rain(draw, columns, font_rain, boost=intensity * 0.5)
+        draw_hud(draw, font_sm, phase)
+        draw_ascii_kvbit(draw, font_ascii, intensity, phase)
 
-        if intensity > 0.1:
-            draw_lightning_bolts(draw, intensity, center_x)
+        if intensity > 0.35:
+            draw_finch_bolts(draw, intensity, cx, cy)
 
-        img = apply_screen_flash(img, intensity)
-        img = apply_thunder_shake(img, intensity)
+        img = draw_scanlines(img, intensity)
+        img = apply_flash(img, intensity, phase)
+        img = apply_shake(img, intensity, phase)
         frames.append(img)
 
     out = os.path.join(os.path.dirname(__file__), "..", "assets", "kvbit-thunder-header.gif")
