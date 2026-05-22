@@ -10,7 +10,7 @@ from dataclasses import dataclass
 from PIL import Image, ImageDraw, ImageFont
 
 W, H = 800, 200
-FPS_MS = 80
+FPS_MS = 120
 KVBIT_HOLD = 4
 TRANS_LEN = 4
 ALT_HOLD = 5
