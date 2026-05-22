@@ -1,6 +1,6 @@
 <p align="center">
   <img
-    src="https://raw.githubusercontent.com/kvbit/kvbit/refs/heads/main/assets/kvbit-profile-header.gif"
+    src="https://cdn.jsdelivr.net/gh/kvbit/kvbit@d5d40d5/assets/kvbit-profile-header.gif"
     alt="KVBIT — Machine style ASCII with thunder transitions"
     width="800"
   />
