@@ -389,7 +389,7 @@ def generate() -> str:
     palette_ref = frames[0].quantize(colors=128, method=Image.Quantize.MEDIANCUT)
     quantized = [f.quantize(palette=palette_ref, dither=Image.Dither.FLOYDSTEINBERG) for f in frames]
 
-    out = os.path.join(os.path.dirname(__file__), "..", "assets", "kvbit-thunder-header.gif")
+    out = os.path.join(os.path.dirname(__file__), "..", "assets", "kvbit-profile-header.gif")
     os.makedirs(os.path.dirname(out), exist_ok=True)
     quantized[0].save(
         out,
