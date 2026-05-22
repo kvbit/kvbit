@@ -1,6 +1,13 @@
-<p align="center">
-  <img src="https://raw.githubusercontent.com/kvbit/kvbit/main/assets/matrix-kvbit.svg" alt="KVBIT" width="100%" />
-</p>
+<pre align="center">
+<code style="color:#00ff41;font-size:15px;line-height:1.25;">
+██╗  ██╗██╗   ██╗██████╗ ██╗████████╗
+██║ ██╔╝██║   ██║██╔══██╗██║╚══██╔══╝
+█████╔╝ ██║   ██║██████╔╝██║   ██║
+██╔═██╗ ╚██╗ ██╔╝██╔══██╗██║   ██║
+██║  ██╗ ╚████╔╝ ██████╔╝██║   ██║
+╚═╝  ╚═╝  ╚═══╝  ╚═════╝ ╚═╝   ╚═╝
+</code>
+</pre>
 
 <p align="center">
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=22&duration=3500&pause=1200&color=00FF41&center=true&vCenter=true&repeat=true&width=880&lines=Low+profile.+High+signal.;See+everything.+Keep+only+what+matters.;The+wire+never+sleeps.;Stay+relevant." alt="Typing" />
