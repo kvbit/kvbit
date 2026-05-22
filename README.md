@@ -1,16 +1,16 @@
 ```
-   ███████╗██╗███╗   ██╗ ██████╗██╗  ██╗
-   ██╔════╝██║████╗  ██║██╔════╝██║  ██║
-   █████╗  ██║██╔██╗ ██║██║     ███████║
-   ██╔══╝  ██║██║╚██╗██║██║     ██╔══██║
-   ██║     ██║██║ ╚████║╚██████╗██║  ██║
-   ╚═╝     ╚═╝╚═╝  ╚═══╝ ╚═════╝╚═╝  ╚═╝
+██╗  ██╗██╗   ██╗██████╗ ██╗████████╗
+██║ ██╔╝██║   ██║██╔══██╗██║╚══██╔══╝
+█████╔╝ ██║   ██║██████╔╝██║   ██║
+██╔═██╗ ╚██╗ ██╔╝██╔══██╗██║   ██║
+██║  ██╗ ╚████╔╝ ██████╔╝██║   ██║
+╚═╝  ╚═╝  ╚═══╝  ╚═════╝ ╚═╝   ╚═╝
 ```
 
-> *You are being watched. The government has a secret system — a machine that spies on you every hour of every day. I know, because I built it.*
+> *You are being watched. The government has a secret system — a machine that spies on you every hour of every day. Someone has to understand it. Someone has to build the parts that still work.*
 
 ```diff
-+ OPERATOR   :: FINCH
++ OPERATOR   :: KVBIT
 + MACHINE    :: ONLINE
 + ADMIN MODE :: DISABLED
 + LOCATION   :: OFF-GRID
@@ -22,21 +22,17 @@
 ## ▌IDENTITY
 
 ```yaml
-known_as:
-  - Harold Finch
-  - Nathan Ingram
-  - Mr. Wren
-
-true_name: Jahangir Ahmad
+name: Jahangir Ahmad
+handle: kvbit
 location: Srinagar, J&K
-role: architect of the machine / backend engineer
+role: backend engineer / systems builder
 
 directive:
   - build systems that see everything
   - retain only what matters
-  - protect the irrelevant
+  - ship what protects people, not noise
 
-cover_story: "Just a glitch in the Matrix."
+bio: "Just a glitch in the Matrix."
 ```
 
 ---
@@ -71,12 +67,12 @@ Discipline  :: APIs • services • infra • observability
 
 ```bash
 $ whoami
-> a man who prefers to be forgotten
+> jahangir — prefers a low profile
 
 $ cat /etc/machine.conf
 > see everything. keep only what matters.
 
-$ locate finch
+$ locate kvbit
 > coordinates withheld
 
 $ sudo rm -rf /surveillance
@@ -119,10 +115,10 @@ $ ping the_machine
 public_repos :: 131
 signal       :: encrypted
 payphone     :: do not call
-library_card :: active since before you were born
+library_card :: still valid
 ```
 
-> *Everyone is relevant to someone. I merely help the Machine remember who.*
+> *Everyone is relevant to someone. I build the systems that help remember who.*
 
 ---
 
