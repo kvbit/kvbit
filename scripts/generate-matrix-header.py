@@ -34,18 +34,66 @@ ASCII_KVBIT = [
     "╚═╝  ╚═╝  ╚═══╝  ╚═════╝ ╚═╝   ╚═╝",
 ]
 
-# 10 Machine / Finch status screens
+# 10 status screens — alternating Reese (terse) / Finch (literary) voice
 ALT_SCREENS = [
-    [">> THE MACHINE", "   STATUS :: ONLINE", "   ADMIN MODE :: DISABLED"],
-    [">> STAY RELEVANT", "   IRRELEVANT LIST :: FILTERING", "   RELEVANT QUEUE  :: ROUTING"],
-    [">> SIGNAL ACQUIRED", "   SUBJECT :: YOU", "   VERDICT :: RELEVANT"],
-    [">> NODE STATUS", "   LOCATION :: OFF-GRID", "   DISCLOSURE :: MINIMAL"],
-    [">> THREAT MODEL", "   POSTURE :: HOSTILE", "   TRUST :: ZERO"],
-    [">> DATA FEED", "   NOISE :: DISCARDED", "   SIGNAL :: RETAINED"],
-    [">> OPERATOR LOG", "   UPTIME :: CONTINUOUS", "   ENCRYPTION :: ON"],
-    [">> SURVEILLANCE", "   COVERAGE :: TOTAL", "   ACCESS :: DENIED"],
-    [">> MISSION FILE", "   SEE EVERYTHING", "   KEEP WHAT MATTERS"],
-    [">> TRANSMISSION", "   YOU ARE NOT ALONE", "   ACT AS IF YOU ARE"],
+    # Reese — direct, protective
+    [
+        ">> DOESN'T MATTER IF YOU'RE",
+        "   ALREADY DEAD INSIDE.",
+        "   STILL HAVE A JOB TO DO.",
+    ],
+    # Finch — formal, measured
+    [
+        ">> IF YOU CAN HEAR THIS,",
+        "   YOU'RE ALONE.",
+        "   CONDUCT YOURSELF AS IF YOU ARE.",
+    ],
+    # Reese
+    [
+        ">> I WATCH.",
+        "   I PROTECT.",
+        "   THAT'S THE DEAL.",
+    ],
+    # Finch
+    [
+        ">> SEE EVERYTHING.",
+        "   KEEP ONLY WHAT MATTERS.",
+        "   FORGET THE REST.",
+    ],
+    # Reese
+    [
+        ">> TRUST THE MACHINE.",
+        "   OR KEEP RUNNING.",
+    ],
+    # Finch
+    [
+        ">> THE WORLD LOOKS LIKE",
+        "   AN ENDING — BUT IS ALWAYS",
+        "   A BEGINNING.",
+    ],
+    # Reese
+    [
+        ">> EVERYONE'S RELEVANT",
+        "   TO SOMEONE.",
+        "   EVEN IF THEY DON'T KNOW IT.",
+    ],
+    # Finch
+    [
+        ">> PRIVACY IS A LUXURY",
+        "   MOST PEOPLE CAN NO",
+        "   LONGER AFFORD.",
+    ],
+    # Reese
+    [
+        ">> YOU NEED A REASON",
+        "   TO STAY ALIVE? GET ONE.",
+    ],
+    # Finch
+    [
+        ">> WE'RE NOT WALKING",
+        "   IN THE DARK.",
+        "   THE MACHINE IS WATCHING.",
+    ],
 ]
 
 STREAM_CHARS = "01アイウエオカキクケコ0123456789ABCDEF#[]{}|/\\<>"
