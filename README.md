@@ -7,15 +7,22 @@
 ╚═╝  ╚═╝  ╚═══╝  ╚═════╝ ╚═╝   ╚═╝
 ```
 
-> *Most of what passes through the wire does not matter.*
-> *I build for the part that does.*
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&duration=3800&pause=1400&color=58A6FF&center=true&vCenter=true&repeat=true&width=900&lines=Low+profile.+High+signal.;Most+of+the+wire+is+noise.;I+build+for+what+still+matters.;Stay+relevant." alt="Typing animation" />
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/OPERATOR-KVBIT-0d1117?style=for-the-badge&labelColor=58a6ff&color=0d1117" alt="Operator" />
+  <img src="https://img.shields.io/badge/MACHINE-ONLINE-0d1117?style=for-the-badge&labelColor=238636&color=0d1117" alt="Machine" />
+  <img src="https://img.shields.io/badge/LOCATION-OFF--GRID-0d1117?style=for-the-badge&labelColor=8b949e&color=0d1117" alt="Location" />
+  <img src="https://img.shields.io/badge/STATUS-RELEVANT-0d1117?style=for-the-badge&labelColor=da3633&color=0d1117" alt="Status" />
+</p>
 
 ```diff
-+ OPERATOR   :: KVBIT
-+ MACHINE    :: ONLINE
-+ ADMIN MODE :: DISABLED
-+ LOCATION   :: OFF-GRID
-+ STATUS     :: RELEVANT
+! ADMIN MODE    :: LOCKED
+! SURVEILLANCE  :: ACTIVE
+! SIGNAL/NOISE  :: FILTERING
+! OPSEC         :: PARANOID
 ```
 
 ---
@@ -25,15 +32,30 @@
 ```yaml
 name: Jahangir Ahmad
 handle: kvbit
-location: Srinagar, J&K
-role: backend engineer / systems builder
+base: Srinagar, J&K
+role: backend engineer / systems architect
 
-directive:
-  - build systems that see everything
-  - retain only what matters
-  - ship what protects people, not noise
+protocol:
+  - ingest the noise
+  - extract the signal
+  - ship systems that do not blink
 
-bio: "Just a glitch in the Matrix."
+motto: "Just a glitch in the Matrix."
+```
+
+---
+
+## ▌ARSENAL
+
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=js,py,ts,nodejs,react,next,linux,docker,aws,redis,postgres&perline=6&theme=dark" alt="Tech stack" />
+</p>
+
+```txt
+core      :: Node.js • Express • Fastify • APIs • services
+data      :: MariaDB • Redis • SQL-first design
+ops       :: Linux • Docker • AWS • observability
+edge      :: security • automation • infra at scale
 ```
 
 ---
@@ -41,25 +63,16 @@ bio: "Just a glitch in the Matrix."
 ## ▌THE MACHINE
 
 ```bash
-> boot sequence initiated...
+> initializing...
 
-[✓] Irrelevant list      :: populated
-[✓] Relevant numbers     :: routing
-[✓] Backend systems      :: hardened
-[✓] Automation pipelines :: armed
-[✓] Security posture     :: paranoid (healthy)
-[✓] Open source          :: selective disclosure
-```
+[████████████████████] 100%
 
----
-
-## ▌CAPABILITIES
-
-```txt
-Languages   :: JavaScript • Python • TypeScript • Go
-Frameworks  :: Node.js • Express • Fastify • React • Next.js
-Systems     :: Linux • Docker • AWS • MariaDB • Redis
-Discipline  :: APIs • services • infra • observability
+[✓] irrelevant traffic   :: dropped
+[✓] relevant payloads    :: routed
+[✓] backend mesh         :: hardened
+[✓] automation           :: armed
+[✓] threat model         :: assumed hostile
+[✓] disclosure           :: minimal
 ```
 
 ---
@@ -68,70 +81,62 @@ Discipline  :: APIs • services • infra • observability
 
 ```bash
 $ whoami
-> jahangir — prefers a low profile
+> kvbit — visible only when necessary
 
-$ cat /etc/machine.conf
-> see everything. keep only what matters.
+$ curl -s /api/relevance
+> {"status":"200","subject":"you","verdict":"relevant"}
 
-$ locate kvbit
-> coordinates withheld
+$ trace route origin
+> hops obfuscated
 
-$ sudo rm -rf /surveillance
-> nice try.
+$ ssh node@offgrid
+> Permission denied (publickey)
 
-$ ping the_machine
-> pong — still watching
+$ sudo escalate
+> not how this works
+
+$ ping machine
+> 0.003ms — still watching
 ```
 
 ---
 
-## ▌SURVEILLANCE FEED
+## ▌FEED
 
 <p align="center">
-  <img
-    src="https://github-readme-stats.vercel.app/api?username=kvbit&show_icons=true&theme=dark&hide_border=true&bg_color=0d1117&title_color=c9d1d9&text_color=8b949e&icon_color=58a6ff"
-    alt="GitHub stats"
-  />
+  <img height="170" src="https://github-readme-stats.vercel.app/api?username=kvbit&show_icons=true&theme=dark&hide_border=true&bg_color=0d1117&title_color=c9d1d9&text_color=8b949e&icon_color=58a6ff&rank_icon=percentile" alt="Stats" />
+  <img height="170" src="https://github-readme-streak-stats.demolab.com/?user=kvbit&theme=dark&hide_border=true&background=0D1117&ring=58A6FF&fire=58A6FF&currStreakLabel=8B949E&sideLabels=8B949E&dates=484F58" alt="Streak" />
 </p>
 
 <p align="center">
-  <img
-    src="https://github-readme-stats.vercel.app/api/top-langs/?username=kvbit&layout=compact&theme=dark&hide_border=true&bg_color=0d1117&title_color=c9d1d9&text_color=8b949e"
-    alt="Top languages"
-  />
+  <img src="https://github-readme-activity-graph.vercel.app/graph?user=kvbit&bg_color=0d1117&color=58a6ff&line=1f6feb&point=58a6ff&area=true&hide_border=true&custom_title=signal%20over%20time" alt="Activity graph" />
 </p>
 
 <p align="center">
-  <img
-    src="https://streak-stats.demolab.com/?user=kvbit&theme=dark&hide_border=true&background=0D1117&ring=58A6FF&fire=58A6FF&currStreakLabel=8B949E&sideLabels=8B949E&dates=484F58"
-    alt="Contribution streak"
-  />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=kvbit&layout=compact&theme=dark&hide_border=true&bg_color=0d1117&title_color=c9d1d9&text_color=8b949e&langs_count=8" alt="Languages" />
 </p>
 
 ---
 
-## ▌FIELD NOTES
+## ▌FIELD LOG
 
 ```txt
-public_repos :: 131
-signal       :: encrypted
-payphone     :: do not call
-library_card :: still valid
-```
-
-> *Everyone is relevant to someone. I build the systems that help remember who.*
-
----
-
-## ▌TRANSMISSION
-
-```txt
-If you can read this, you are not alone.
-But you should act as if you are.
-
-Stay relevant.
+public_repos  :: 131
+node_uptime   :: continuous
+encryption    :: on
+coordinates   :: [REDACTED]
+last_ping     :: now
 ```
 
 <p align="center">
-  <sub>// end of line //</sub>
+  <img src="https://komarev.com/ghpvc/?username=kvbit&label=node+views&color=58a6ff&style=flat-square" alt="Profile views" />
+</p>
+
+> *Everyone is relevant to someone. I build what remembers the difference.*
+
+---
+
+<p align="center">
+  <strong>Stay relevant.</strong><br/>
+  <sub>// transmission ends //</sub>
 </p>
