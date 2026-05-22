@@ -1,7 +1,6 @@
 <p align="center">
-  <!-- cache-busted thunder header — do not rename without updating URL -->
   <img
-    src="https://cdn.jsdelivr.net/gh/kvbit/kvbit@main/assets/kvbit-thunder-header.gif"
+    src="https://raw.githubusercontent.com/kvbit/kvbit/refs/heads/main/assets/kvbit-thunder-header.gif"
     alt="KVBIT — Matrix rain with lightning"
     width="100%"
   />
