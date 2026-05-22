@@ -1,11 +1,15 @@
-```
-██╗  ██╗██╗   ██╗██████╗ ██╗████████╗
-██║ ██╔╝██║   ██║██╔══██╗██║╚══██╔══╝
-█████╔╝ ██║   ██║██████╔╝██║   ██║
-██╔═██╗ ╚██╗ ██╔╝██╔══██╗██║   ██║
-██║  ██╗ ╚████╔╝ ██████╔╝██║   ██║
-╚═╝  ╚═╝  ╚═══╝  ╚═════╝ ╚═╝   ╚═╝
-```
+<h1 align="center">KVBIT</h1>
+
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=22&duration=3500&pause=1200&color=58A6FF&center=true&vCenter=true&repeat=true&width=880&lines=Low+profile.+High+signal.;See+everything.+Keep+only+what+matters.;The+wire+never+sleeps.;Stay+relevant." alt="Typing" />
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/OPERATOR-kvbit-0d1117?style=for-the-badge&labelColor=21262d&color=58a6ff" />
+  <img src="https://img.shields.io/badge/MACHINE-ONLINE-0d1117?style=for-the-badge&labelColor=21262d&color=238636" />
+  <img src="https://img.shields.io/badge/ACCESS-OFF--GRID-0d1117?style=for-the-badge&labelColor=21262d&color=8b949e" />
+  <img src="https://img.shields.io/badge/STATUS-RELEVANT-0d1117?style=for-the-badge&labelColor=21262d&color=da3633" />
+</p>
 
 <p align="center">
   <sub>THE MACHINE · ADMIN MODE DISABLED</sub>
@@ -48,6 +52,21 @@ remark: "Just a glitch in the Matrix."
 
 ---
 
+## ▌ ARSENAL
+
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=js,py,ts,nodejs,react,next,linux,docker,aws,redis,postgres,git&perline=8&theme=dark" alt="Stack" />
+</p>
+
+```txt
+core   :: Node.js · Express · Fastify · APIs · services
+data   :: MariaDB · Redis · SQL-first design
+ops    :: Linux · Docker · AWS · observability
+edge   :: security · automation · infra at scale
+```
+
+---
+
 ## ▌ THE MACHINE
 
 ```bash
@@ -63,19 +82,6 @@ remark: "Just a glitch in the Matrix."
 [✓] human access         :: denied
 ```
 
----
-
-## ▌ CAPABILITIES
-
-```txt
-languages   :: JavaScript · Python · TypeScript · Go
-systems     :: Node.js · Express · Fastify · Linux · Docker · AWS
-data        :: MariaDB · Redis · SQL-first design
-discipline  :: APIs · services · infra · observability · security
-```
-
----
-
 <details>
 <summary><b>▌ ACCESS LOG — AUTHORIZED PERSONNEL ONLY</b></summary>
 <br/>
@@ -83,6 +89,9 @@ discipline  :: APIs · services · infra · observability · security
 ```bash
 $ whoami
 > kvbit — prefers not to be found
+
+$ curl -s /api/relevance
+> {"status":200,"subject":"you","verdict":"relevant"}
 
 $ cat /var/log/irrelevant.list | wc -l
 > figure exceeds comfortable notation
@@ -99,6 +108,9 @@ $ locate subject
 $ ssh node@offgrid
 > Permission denied (publickey)
 
+$ sudo escalate
+> not how this works.
+
 $ ping the_machine
 > 64 bytes — still listening
 ```
@@ -110,12 +122,13 @@ $ ping the_machine
 ## ▌ SURVEILLANCE FEED
 
 <p align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=kvbit&show_icons=true&theme=dark&hide_border=true&bg_color=000000&title_color=6e7681&text_color=8b949e&icon_color=6e7681&rank_icon=percentile" alt="Stats" />
-  <img height="165" src="https://github-readme-streak-stats.demolab.com/?user=kvbit&theme=dark&hide_border=true&background=00000000&ring=6e7681&fire=6e7681&currStreakLabel=6e7681&sideLabels=6e7681&dates=484f58" alt="Streak" />
+  <img height="165" src="https://github-readme-stats.vercel.app/api?username=kvbit&show_icons=true&theme=dark&hide_border=true&bg_color=0d1117&title_color=c9d1d9&text_color=8b949e&icon_color=58a6ff&rank_icon=percentile" alt="Stats" />
+  <img height="165" src="https://github-readme-streak-stats.demolab.com/?user=kvbit&theme=dark&hide_border=true&background=0D1117&ring=58A6FF&fire=58A6FF&currStreakLabel=8B949E&sideLabels=8B949E&dates=484F58" alt="Streak" />
+  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=kvbit&layout=compact&theme=dark&hide_border=true&bg_color=0d1117&title_color=c9d1d9&text_color=8b949e&langs_count=6" alt="Languages" />
 </p>
 
 <p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?user=kvbit&bg_color=000000&color=6e7681&line=484f58&point=6e7681&area=true&hide_border=true&custom_title=THE%20FEED&height=260" alt="The feed" />
+  <img src="https://github-readme-activity-graph.vercel.app/graph?user=kvbit&bg_color=0d1117&color=58a6ff&line=1f6feb&point=58a6ff&area=true&hide_border=true&custom_title=THE%20FEED&height=270" alt="Feed" />
 </p>
 
 ---
@@ -131,7 +144,7 @@ last_transmit  :: now
 ```
 
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=kvbit&label=observers&color=6e7681&style=flat-square" alt="Observers" />
+  <img src="https://komarev.com/ghpvc/?username=kvbit&label=observers&color=58a6ff&style=flat-square" alt="Observers" />
 </p>
 
 <br/>
