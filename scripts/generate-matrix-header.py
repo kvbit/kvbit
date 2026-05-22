@@ -1,27 +1,28 @@
 #!/usr/bin/env python3
-"""Generate KVBIT Matrix rain header GIF with lightning bursts."""
+"""Generate KVBIT Matrix rain GIF with dramatic lightning + thunder."""
 
 from __future__ import annotations
 
-import math
 import os
 import random
 from dataclasses import dataclass, field
 
-from PIL import Image, ImageDraw, ImageFilter, ImageFont
+from PIL import Image, ImageDraw, ImageFont
 
 W, H = 900, 220
-FRAMES = 48
-FPS_MS = 70
+FRAMES = 54
+FPS_MS = 85
 MATRIX_CHARS = (
     "ｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜｦﾝ"
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    "0123456789"
-    "+<>[]{}|/\\=:*#@$"
+    "ｱｲｳｴｵABCD0123456789<>[]{}|/\\=:*#"
 )
 COL_W = 16
 COLS = W // COL_W
 TITLE = "KVBIT"
+
+# Each strike = 6 frames: rumble → build → PEAK → peak2 → fade → afterglow
+STRIKES = [8, 24, 40]
+STRIKE_CURVE = [0.15, 0.45, 1.0, 0.95, 0.55, 0.2]
 
 
 @dataclass
@@ -33,61 +34,42 @@ class Column:
 
     def reset(self) -> None:
         self.y = random.uniform(-H * 1.2, -40)
-        self.speed = random.uniform(6, 14)
-        self.length = random.randint(12, 28)
+        self.speed = random.uniform(7, 15)
+        self.length = random.randint(14, 30)
         self.chars = [random.choice(MATRIX_CHARS) for _ in range(self.length)]
 
     def tick(self) -> None:
         self.y += self.speed
-        if random.random() < 0.35:
+        if random.random() < 0.4:
             self.chars[0] = random.choice(MATRIX_CHARS)
-        if random.random() < 0.08 and len(self.chars) > 2:
-            idx = random.randint(1, min(4, len(self.chars) - 1))
-            self.chars[idx] = random.choice(MATRIX_CHARS)
-        if self.y - self.length * COL_W > H + 40:
+        if random.random() < 0.1 and len(self.chars) > 2:
+            self.chars[random.randint(1, 4)] = random.choice(MATRIX_CHARS)
+        if self.y - self.length * COL_W > H + 50:
             self.reset()
 
 
 def load_fonts() -> tuple[ImageFont.FreeTypeFont, ImageFont.FreeTypeFont]:
-    candidates = [
+    for path in (
         "/System/Library/Fonts/Supplemental/Arial Unicode.ttf",
         "/System/Library/Fonts/Menlo.ttc",
         "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf",
-    ]
-    for path in candidates:
+    ):
         if os.path.exists(path):
-            return (
-                ImageFont.truetype(path, 15),
-                ImageFont.truetype(path, 64),
-            )
-    default = ImageFont.load_default()
-    return default, default
+            return ImageFont.truetype(path, 15), ImageFont.truetype(path, 68)
+    d = ImageFont.load_default()
+    return d, d
 
 
-def lightning_schedule(frame: int) -> float:
-    """Return lightning intensity 0..1 for this frame."""
-    strikes = {6: 1.0, 7: 0.85, 8: 0.35, 22: 0.9, 23: 1.0, 24: 0.5, 38: 0.95, 39: 0.7}
-    return strikes.get(frame, 0.0)
+def strike_intensity(frame: int) -> float:
+    for start in STRIKES:
+        offset = frame - start
+        if 0 <= offset < len(STRIKE_CURVE):
+            return STRIKE_CURVE[offset]
+    return 0.0
 
 
-def draw_bolt(draw: ImageDraw.ImageDraw, x: int, intensity: float) -> None:
-    if intensity < 0.2:
-        return
-    y = 0
-    points = [(x, y)]
-    segments = random.randint(5, 8)
-    for _ in range(segments):
-        y += random.randint(18, 36)
-        x += random.randint(-22, 22)
-        points.append((x, min(y, H)))
-    color = (220, 245, 255, int(220 * intensity))
-    width = max(1, int(3 * intensity))
-    draw.line(points, fill=color[:3], width=width)
-    for px, py in points:
-        draw.ellipse((px - 4, py - 4, px + 4, py + 4), fill=(180, 220, 255))
-
-
-def draw_rain(draw: ImageDraw.ImageDraw, columns: list[Column], font: ImageFont.FreeTypeFont) -> None:
+def draw_rain(draw: ImageDraw.ImageDraw, columns: list[Column], font: ImageFont.FreeTypeFont, bright: float) -> None:
+    boost = int(80 * bright)
     for i, col in enumerate(columns):
         x = i * COL_W + 3
         for j, ch in enumerate(col.chars):
@@ -95,68 +77,85 @@ def draw_rain(draw: ImageDraw.ImageDraw, columns: list[Column], font: ImageFont.
             if y < -24 or y > H + 8:
                 continue
             if j == 0:
-                fill = (220, 255, 230)
+                fill = (min(255, 200 + boost), 255, min(255, 220 + boost))
             elif j == 1:
-                fill = (140, 255, 160)
+                fill = (min(255, 100 + boost), 255, min(255, 140 + boost))
             else:
-                fade = max(0, 255 - j * 20)
-                fill = (0, int(fade * 0.75), int(fade * 0.2))
+                fade = max(0, 220 - j * 18) + boost
+                fill = (0, min(255, int(fade * 0.8)), min(255, int(fade * 0.25)))
             draw.text((x, y), ch, font=font, fill=fill)
 
 
-def draw_kvbit(
-    base: Image.Image,
-    draw: ImageDraw.ImageDraw,
-    font: ImageFont.FreeTypeFont,
-    intensity: float,
-) -> None:
+def draw_lightning_bolts(draw: ImageDraw.ImageDraw, intensity: float, center_x: int) -> None:
+    bolt_count = 5 + int(4 * intensity)
+    for _ in range(bolt_count):
+        x = center_x + random.randint(-220, 220)
+        points = [(x, 0)]
+        cy = 0
+        while cy < H * 0.95:
+            cy += random.randint(20, 42)
+            x += random.randint(-28, 28)
+            points.append((x, min(cy, H)))
+        width = max(2, int(2 + 6 * intensity))
+        core = (255, 255, 255)
+        glow = (120, 200, 255)
+        draw.line(points, fill=glow, width=width + 4)
+        draw.line(points, fill=core, width=width)
+        for px, py in points[::2]:
+            r = int(6 + 8 * intensity)
+            draw.ellipse((px - r, py - r, px + r, py + r), fill=(200, 230, 255))
+
+
+def draw_kvbit(draw: ImageDraw.ImageDraw, font: ImageFont.FreeTypeFont, intensity: float) -> tuple[int, int, int, int]:
     bbox = draw.textbbox((0, 0), TITLE, font=font)
     tw, th = bbox[2] - bbox[0], bbox[3] - bbox[1]
     tx, ty = (W - tw) // 2, (H - th) // 2 - 6
 
-    if intensity > 0.05:
-        flash = Image.new("RGBA", (W, H), (0, 0, 0, 0))
-        fdraw = ImageDraw.Draw(flash)
-        alpha = int(90 + 140 * intensity)
-        fdraw.rectangle((0, 0, W, H), fill=(210, 235, 255, alpha))
-        for _ in range(int(4 * intensity) + 1):
-            bx = random.randint(tx - 40, tx + tw + 40)
-            draw_bolt(fdraw, bx, intensity)
-        base.alpha_composite(flash)
-
-    if intensity > 0.6:
-        core = (255, 255, 255)
-        glow = (120, 220, 255)
-        outline = (200, 240, 255)
-    elif intensity > 0.25:
-        core = (210, 255, 240)
-        glow = (0, 200, 90)
-        outline = (80, 255, 140)
+    if intensity >= 0.9:
+        layers = [
+            (-6, 0, (80, 160, 255)),
+            (6, 0, (80, 160, 255)),
+            (0, -6, (80, 160, 255)),
+            (0, 6, (80, 160, 255)),
+            (-3, -3, (180, 220, 255)),
+            (3, 3, (180, 220, 255)),
+            (0, 0, (255, 255, 255)),
+        ]
+    elif intensity >= 0.4:
+        layers = [
+            (-4, 0, (0, 180, 255)),
+            (4, 0, (0, 180, 255)),
+            (0, 0, (220, 255, 255)),
+        ]
     else:
-        core = (0, 255, 70)
-        glow = (0, 90, 30)
-        outline = (0, 160, 50)
+        layers = [
+            (-2, 0, (0, 120, 40)),
+            (2, 0, (0, 120, 40)),
+            (0, 0, (0, 255, 65)),
+        ]
 
-    for ox, oy, col in [
-        (-3, 0, outline),
-        (3, 0, outline),
-        (0, -3, outline),
-        (0, 3, outline),
-        (-2, -2, glow),
-        (2, 2, glow),
-    ]:
-        draw.text((tx + ox, ty + oy), TITLE, font=font, fill=col)
+    for ox, oy, color in layers:
+        draw.text((tx + ox, ty + oy), TITLE, font=font, fill=color)
 
-    draw.text((tx, ty), TITLE, font=font, fill=core)
+    return tx, ty, tw, th
 
 
-def add_thunder_shake(img: Image.Image, intensity: float) -> Image.Image:
+def apply_screen_flash(img: Image.Image, intensity: float) -> Image.Image:
+    if intensity < 0.35:
+        return img
+    white = Image.new("RGB", (W, H), (255, 255, 255))
+    blend = 0.25 + 0.65 * intensity
+    return Image.blend(img, white, blend)
+
+
+def apply_thunder_shake(img: Image.Image, intensity: float) -> Image.Image:
     if intensity < 0.5:
         return img
-    offset = random.randint(-3, 3)
-    shaken = Image.new("RGB", (W, H), (0, 0, 0))
-    shaken.paste(img, (offset, random.randint(-2, 2)))
-    return shaken
+    dx = random.randint(-12, 12)
+    dy = random.randint(-8, 8)
+    canvas = Image.new("RGB", (W, H), (0, 0, 0))
+    canvas.paste(img, (dx, dy))
+    return canvas
 
 
 def generate() -> str:
@@ -167,31 +166,35 @@ def generate() -> str:
         col.y = random.uniform(-H, H)
 
     frames: list[Image.Image] = []
+    center_x = W // 2
+
     for f in range(FRAMES):
         for col in columns:
             col.tick()
 
-        intensity = lightning_schedule(f)
-        img = Image.new("RGBA", (W, H), (0, 0, 0, 255))
+        intensity = strike_intensity(f)
+        img = Image.new("RGB", (W, H), (0, 0, 0))
         draw = ImageDraw.Draw(img)
-        draw_rain(draw, columns, font_rain)
-        draw_kvbit(img, draw, font_title, intensity)
 
-        rgb = img.convert("RGB")
-        rgb = add_thunder_shake(rgb, intensity)
-        if intensity > 0.7:
-            rgb = rgb.filter(ImageFilter.GaussianBlur(radius=0.6))
-        frames.append(rgb)
+        draw_rain(draw, columns, font_rain, bright=intensity)
+        draw_kvbit(draw, font_title, intensity)
 
-    os.makedirs(os.path.join(os.path.dirname(__file__), "..", "assets"), exist_ok=True)
+        if intensity > 0.1:
+            draw_lightning_bolts(draw, intensity, center_x)
+
+        img = apply_screen_flash(img, intensity)
+        img = apply_thunder_shake(img, intensity)
+        frames.append(img)
+
     out = os.path.join(os.path.dirname(__file__), "..", "assets", "kvbit-matrix-rain.gif")
+    os.makedirs(os.path.dirname(out), exist_ok=True)
     frames[0].save(
         out,
         save_all=True,
         append_images=frames[1:],
         duration=FPS_MS,
         loop=0,
-        optimize=True,
+        optimize=False,
     )
     return out
 
