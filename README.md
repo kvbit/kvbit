@@ -7,7 +7,8 @@
 ╚═╝  ╚═╝  ╚═══╝  ╚═════╝ ╚═╝   ╚═╝
 ```
 
-> *You are being watched. The government has a secret system — a machine that spies on you every hour of every day. Someone has to understand it. Someone has to build the parts that still work.*
+> *Most of what passes through the wire does not matter.*
+> *I build for the part that does.*
 
 ```diff
 + OPERATOR   :: KVBIT
