@@ -1,0 +1,35 @@
+name: Update Streak Card
+
+on:
+  schedule:
+    - cron: "0 8 * * *"
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/update-streak-card.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Fetch streak card SVG
+        run: |
+          curl -fsSL --max-time 120 \
+            "https://github-readme-streak-stats.herokuapp.com/?user=kvbit&theme=dark&hide_border=true&background=0D1117&ring=00FF41&fire=00FF41&currStreakLabel=8B949E&sideLabels=8B949E&dates=484F58" \
+            -o assets/streak-card.svg
+          test -s assets/streak-card.svg
+
+      - name: Commit streak card
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: refresh streak card SVG"
+          file_pattern: assets/streak-card.svg

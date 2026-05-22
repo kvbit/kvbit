@@ -129,7 +129,7 @@ $ ping the_machine
 
 <p align="center">
   <img height="165" src="https://github-readme-stats-sigma-five.vercel.app/api?username=kvbit&show_icons=true&theme=dark&hide_border=true&bg_color=0d1117&title_color=c9d1d9&text_color=8b949e&icon_color=00ff41&include_all_commits=true&cache_seconds=86400" alt="Stats" />
-  <img height="165" src="https://streak-stats.demolab.com/?user=kvbit&theme=dark&hide_border=true&background=0D1117&ring=00FF41&fire=00FF41&currStreakLabel=8B949E&sideLabels=8B949E&dates=484F58" alt="Streak" />
+  <img height="165" src="./assets/streak-card.svg" alt="Streak" />
   <img height="165" src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=kvbit&layout=compact&theme=dark&hide_border=true&bg_color=0d1117&title_color=c9d1d9&text_color=8b949e&langs_count=8&cache_seconds=86400" alt="Languages" />
 </p>
 
