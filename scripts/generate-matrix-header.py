@@ -9,9 +9,9 @@ from dataclasses import dataclass
 
 from PIL import Image, ImageDraw, ImageFont
 
-W, H = 900, 240
-FRAMES = 78
-FPS_MS = 95
+W, H = 800, 200
+FRAMES = 60
+FPS_MS = 100
 
 BG = (10, 14, 20)
 RAIN_HEAD = (180, 220, 255)
@@ -62,15 +62,15 @@ COLS = W // COL_W
 # [71,78) KVBIT tail
 
 SEGMENTS = [
-    ("kvbit", 0, 10),
-    ("trans", 10, 17, "kvbit", "alt", 0),
-    ("alt", 17, 28, 0),
-    ("trans", 28, 35, "alt", "kvbit", 0),
-    ("kvbit", 35, 46),
-    ("trans", 46, 53, "kvbit", "alt", 1),
-    ("alt", 53, 64, 1),
-    ("trans", 64, 71, "alt", "kvbit", 1),
-    ("kvbit", 71, 78),
+    ("kvbit", 0, 8),
+    ("trans", 8, 13, "kvbit", "alt", 0),
+    ("alt", 13, 22, 0),
+    ("trans", 22, 27, "alt", "kvbit", 0),
+    ("kvbit", 27, 35),
+    ("trans", 35, 41, "kvbit", "alt", 1),
+    ("alt", 41, 49, 1),
+    ("trans", 49, 54, "alt", "kvbit", 1),
+    ("kvbit", 54, 60),
 ]
 
 TRANS_PHASES = ["rumble", "charge", "flash", "peak", "flash", "decay", "settle"]
