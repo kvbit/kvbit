@@ -1,179 +1,130 @@
-<p align="center">
-  <img
-    src="https://cdn.jsdelivr.net/gh/kvbit/kvbit@d5d40d5/assets/kvbit-profile-header.gif"
-    alt="KVBIT — Machine style ASCII with thunder transitions"
-    width="800"
-  />
-</p>
+<!-- Jahangir Ahmad · kvbit · Backend Engineer -->
 
-<p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=22&duration=3500&pause=1200&color=00FF41&center=true&vCenter=true&repeat=true&width=880&lines=Low+profile.+High+signal.;See+everything.+Keep+only+what+matters.;The+wire+never+sleeps.;Stay+relevant." alt="Typing" />
-</p>
+<br/>
 
-<p align="center">
-  <img src="https://img.shields.io/badge/OPERATOR-kvbit-0d1117?style=for-the-badge&labelColor=21262d&color=00ff41" />
-  <img src="https://img.shields.io/badge/MACHINE-ONLINE-0d1117?style=for-the-badge&labelColor=21262d&color=238636" />
-  <img src="https://img.shields.io/badge/ACCESS-OFF--GRID-0d1117?style=for-the-badge&labelColor=21262d&color=8b949e" />
-  <img src="https://img.shields.io/badge/STATUS-RELEVANT-0d1117?style=for-the-badge&labelColor=21262d&color=da3633" />
-</p>
-
-<p align="center">
-  <sub>THE MACHINE · ADMIN MODE DISABLED</sub>
-</p>
+<img src="./assets/hero.svg" width="100%" alt="Jahangir Ahmad"/>
 
 <br/>
 
 <p align="center">
-  <em>The city never stops talking.<br/>
-  Most of it is noise — I build for the part that isn't.</em>
+  <sub>
+  <a href="#about">about</a> · <a href="#stack">stack</a> · <a href="#work">work</a> · <a href="#activity">activity</a> · <a href="#oss">oss</a> · <a href="#connect">connect</a>
+  </sub>
 </p>
 
 <br/>
 
-```diff
-+ NODE STATUS     :: ACTIVE
-+ IRRELEVANT LIST :: FILTERING
-+ RELEVANT QUEUE  :: ROUTING
-+ LOCATION        :: OFF-GRID
-+ DISCLOSURE      :: MINIMAL
-```
+<img src="./assets/quote.svg" width="100%" alt=""/>
 
----
+<br/><br/>
 
-## ▌ DOSSIER
+<a id="about"></a>
+<img src="./assets/section-about.svg" width="100%" alt="About"/>
+<br/>
 
-```yaml
-subject: Jahangir Ahmad
-designation: kvbit
-last_known: Srinagar, J&K
-function: backend engineer · systems architect
+<img align="right" width="340" alt="Stats" src="https://github-readme-stats.vercel.app/api?username=kvbit&show_icons=true&hide_title=true&include_all_commits=true&count_private=true&bg_color=040408&title_color=FAFAFA&text_color=71717A&icon_color=22D3EE&border_color=1A1A1F&border_radius=20&ring_color=27272A"/>
 
-operating_principle:
-  - observe without spectacle
-  - retain only what matters
-  - protect what the feed would discard
+**Jahangir Ahmad** builds **backend systems** — APIs, data layers, auth, and platform services.
 
-remark: "Just a glitch in the Matrix."
-```
+Shipping **BCW platform** at Studio137. Clean architecture, typed boundaries, code that survives production.
 
----
+<br/>
 
-## ▌ ARSENAL
+<img src="./assets/focus-bento.svg" width="100%" alt="Focus"/>
 
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=js,py,ts,nodejs,react,next,linux,docker,aws,redis,postgres,git&perline=8&theme=dark" alt="Stack" />
-</p>
-
-```txt
-core   :: Node.js · Express · Fastify · APIs · services
-data   :: MariaDB · Redis · SQL-first design
-ops    :: Linux · Docker · AWS · observability
-edge   :: security · automation · infra at scale
-```
-
----
-
-## ▌ THE MACHINE
-
-```bash
-> cold boot — secure partition
-
-[████████████████████] complete
-
-[✓] irrelevant traffic   :: discarded
-[✓] relevant payloads    :: queued
-[✓] backend mesh         :: hardened
-[✓] automation           :: silent
-[✓] threat model         :: assumed hostile
-[✓] human access         :: denied
-```
+<br/>
 
 <details>
-<summary><b>▌ ACCESS LOG — AUTHORIZED PERSONNEL ONLY</b></summary>
+<summary><sub>more</sub></summary>
 <br/>
 
-```bash
-$ whoami
-> kvbit — prefers not to be found
+`bcw-platform` — TypeScript, Express, Prisma, PostgreSQL, AWS Cognito, OpenTelemetry
 
-$ curl -s /api/relevance
-> {"status":200,"subject":"you","verdict":"relevant"}
+[Arclight](https://github.com/kvbit/Arclight) · [30Days30Projects](https://github.com/kvbit/30Days30Projects) · [100DaysOfCode](https://github.com/kvbit/100DaysOfCode)
 
-$ cat /var/log/irrelevant.list | wc -l
-> figure exceeds comfortable notation
-
-$ ls ~/library/
-> systems · philosophy · things built to outlast their authors
-
-$ cat mission.txt
-> see everything. keep only what matters.
-
-$ locate subject
-> coordinates withheld
-
-$ ssh node@offgrid
-> Permission denied (publickey)
-
-$ sudo escalate
-> not how this works.
-
-$ ping the_machine
-> 64 bytes — still listening
-```
+Srinagar, J&amp;K · UTC+5:30
 
 </details>
 
----
+<br clear="right"/>
 
-## ▌ SURVEILLANCE FEED
+<img align="right" width="340" alt="Streak" src="https://github-readme-streak-stats.herokuapp.com/?user=kvbit&background=040408&border=1A1A1F&ring=22D3EE&fire=8B5CF6&currStreakLabel=52525B&sideNums=A1A1AA&currStreakNum=FAFAFA&sideLabels=3F3F46&dates=27272A&border_radius=20"/>
+
+<br clear="right"/>
+
+<br/><br/>
+
+<a id="stack"></a>
+<img src="./assets/section-stack.svg" width="100%" alt="Stack"/>
+<br/>
+<img src="./assets/tech-bento.svg" width="100%" alt="Stack"/>
+
+<br/><br/>
+
+<a id="work"></a>
+<img src="./assets/section-work.svg" width="100%" alt="Work"/>
+<br/>
+
+<a href="https://github.com/kvbit/Arclight"><img src="./assets/featured-project.svg" width="100%" alt="Arclight"/></a>
+
+<br/><br/>
+
+<table width="100%"><tr>
+<td width="33%" align="center"><a href="https://github.com/kvbit/awstest"><img src="./assets/card-project-2.svg" width="100%" alt="awstest"/></a></td>
+<td width="33%" align="center"><a href="https://github.com/kvbit/30Days30Projects"><img src="./assets/card-project-3.svg" width="100%" alt="30Days30Projects"/></a></td>
+<td width="33%" align="center"><a href="https://github.com/kvbit/100DaysOfCode"><img src="./assets/card-project-4.svg" width="100%" alt="100DaysOfCode"/></a></td>
+</tr></table>
+
+<br/><br/>
+
+<a id="activity"></a>
+<img src="./assets/section-activity.svg" width="100%" alt="Activity"/>
+<br/>
 
 <p align="center">
-  <img height="165" src="https://github-readme-stats-sigma-five.vercel.app/api?username=kvbit&show_icons=true&theme=dark&hide_border=true&bg_color=0d1117&title_color=c9d1d9&text_color=8b949e&icon_color=00ff41&include_all_commits=true&cache_seconds=86400" alt="Stats" />
-  <img height="165" src="./assets/streak-card.svg" alt="Streak" />
-  <img height="165" src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=kvbit&layout=compact&theme=dark&hide_border=true&bg_color=0d1117&title_color=c9d1d9&text_color=8b949e&langs_count=8&cache_seconds=86400" alt="Languages" />
-</p>
-
-<p align="center">
-  <img src="https://ghchart.rshah.org/00ff41/kvbit" alt="Contribution chart" width="100%" />
-</p>
-
----
-
-## ▌ FIELD NOTES
-
-```txt
-public_repos   :: 131
-signal         :: encrypted
-payphone       :: do not use
-library_card   :: still valid
-last_transmit  :: now
-```
-
-<p align="center">
-  <img src="https://komarev.com/ghpvc/?username=kvbit&label=observers&color=00ff41&style=flat-square" alt="Observers" />
+  <img height="220" alt="Languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=kvbit&layout=donut-vertical&langs_count=6&bg_color=040408&title_color=FAFAFA&text_color=71717A&icon_color=22D3EE&border_color=1A1A1F&border_radius=20&custom_title=Languages"/>
+  &nbsp;&nbsp;
+  <img height="220" alt="Overview" src="https://github-readme-stats.vercel.app/api?username=kvbit&show_icons=true&hide=issues&bg_color=040408&title_color=FAFAFA&text_color=71717A&icon_color=8B5CF6&border_color=1A1A1F&border_radius=20&hide_title=true"/>
 </p>
 
 <br/>
 
-> *If you can read this, you are not alone.<br/>
-> But you should conduct yourself as if you are.*
+<a href="https://github.com/kvbit">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=kvbit&bg_color=040408&color=27272A&line=22D3EE&point=52525B&area=true&area_color=8B5CF6&hide_border=true" width="100%" alt="Activity"/>
+</a>
+
+<br/><br/>
+
+<a id="oss"></a>
+<img src="./assets/section-oss.svg" width="100%" alt="OSS"/>
+<br/>
+
+<p align="center">
+  <a href="https://github.com/kvbit/Arclight"><img src="https://github-readme-stats.vercel.app/api/pin/?username=kvbit&repo=Arclight&bg_color=040408&title_color=FAFAFA&text_color=71717A&icon_color=22D3EE&border_color=1A1A1F&border_radius=20" alt="Arclight"/></a>
+  &nbsp;&nbsp;
+  <a href="https://github.com/kvbit/30Days30Projects"><img src="https://github-readme-stats.vercel.app/api/pin/?username=kvbit&repo=30Days30Projects&bg_color=040408&title_color=FAFAFA&text_color=71717A&icon_color=8B5CF6&border_color=1A1A1F&border_radius=20" alt="30Days30Projects"/></a>
+  &nbsp;&nbsp;
+  <a href="https://github.com/kvbit/100DaysOfCode"><img src="https://github-readme-stats.vercel.app/api/pin/?username=kvbit&repo=100DaysOfCode&bg_color=040408&title_color=FAFAFA&text_color=71717A&icon_color=22D3EE&border_color=1A1A1F&border_radius=20" alt="100DaysOfCode"/></a>
+</p>
+
+<br/><br/>
+
+<a id="connect"></a>
+<img src="./assets/section-contact.svg" width="100%" alt="Connect"/>
+<br/>
+
+<a href="mailto:jahangir@studio137.co.za"><img src="./assets/connect-cta.svg" width="100%" alt="Connect"/></a>
 
 <br/>
 
 <p align="center">
-  <strong>Stay relevant.</strong>
-</p>
-
-<p align="center">
-  <sub>// end of transmission //</sub>
+  <sub>
+  <a href="https://github.com/kvbit">github</a> · <a href="mailto:jahangir@studio137.co.za">email</a>
+  </sub>
 </p>
 
 <br/>
 
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/kvbit/kvbit/output/github-contribution-grid-snake-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/kvbit/kvbit/output/github-contribution-grid-snake.svg" />
-    <img alt="Contribution grid" src="https://raw.githubusercontent.com/kvbit/kvbit/output/github-contribution-grid-snake-dark.svg" />
-  </picture>
-</p>
+<img src="./assets/footer.svg" width="100%" alt=""/>
+
+<p align="right"><img src="https://komarev.com/ghpvc/?username=kvbit&color=27272A&style=flat-square&label=&compact=true" alt=""/></p>
