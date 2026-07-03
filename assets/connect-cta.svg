@@ -6,7 +6,7 @@
   <rect width="1200" height="160" rx="24" fill="#040408"/>
   <rect x="32" y="24" width="1136" height="112" rx="20" fill="#fff" fill-opacity=".015" stroke="url(#i)" stroke-opacity=".25" stroke-width="1"/>
   <text x="64" y="72" fill="#FAFAFA" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,system-ui,sans-serif" font-size="24" font-weight="600" letter-spacing="-.5">Open to backend engineering roles.</text>
-  <text x="64" y="104" fill="#52525B" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,system-ui,sans-serif" font-size="15">Platform APIs · system design · production TypeScript</text>
+  <text x="64" y="104" fill="#52525B" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,system-ui,sans-serif" font-size="15">Platform APIs Â· system design Â· production TypeScript</text>
   <rect x="64" y="116" width="160" height="1.5" rx=".75" fill="url(#l)"/>
-  <text x="64" y="140" fill="#3F3F46" font-family="ui-monospace,Menlo,monospace" font-size="12">jahangir@studio137.co.za · github.com/kvbit</text>
+  <text x="64" y="140" fill="#3F3F46" font-family="ui-monospace,Menlo,monospace" font-size="12">jahangir@studio137.co.za Â· github.com/kvbit</text>
 </svg>
