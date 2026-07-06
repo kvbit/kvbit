@@ -66,8 +66,8 @@
 </a>
 
 <!-- 11 // UPLINK -->
-<a href="mailto:jahangir@studio137.co.za">
-  <img src="./assets/uplink.svg" width="100%" alt="Uplink — the channel is open. jahangir@studio137.co.za · github.com/kvbit · ACK expected within 24 hours."/>
+<a href="mailto:mailboxmelted@gmail.com">
+  <img src="./assets/uplink.svg" width="100%" alt="Uplink — the channel is open. mailboxmelted@gmail.com · github.com/kvbit · ACK expected within 24 hours."/>
 </a>
 
 <!-- EOF -->
