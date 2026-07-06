@@ -36,6 +36,7 @@
   <a href="https://github.com/kvbit/Arclight"><code>arclight</code></a>&nbsp;·&nbsp;
   <a href="https://github.com/kvbit/30Days30Projects"><code>30days</code></a>&nbsp;·&nbsp;
   <a href="https://github.com/kvbit/100DaysOfCode"><code>100days</code></a>&nbsp;·&nbsp;
+  <a href="mailto:mailboxmelted@gmail.com"><code>uplink</code></a>&nbsp;·&nbsp;
   <a href="https://github.com/kvbit?tab=repositories"><code>--all</code></a>
 </p>
 
@@ -67,7 +68,7 @@
 
 <!-- 11 // UPLINK -->
 <a href="mailto:mailboxmelted@gmail.com">
-  <img src="./assets/uplink.svg" width="100%" alt="Uplink — the channel is open. mailboxmelted@gmail.com · github.com/kvbit · ACK expected within 24 hours."/>
+  <img src="./assets/uplink.svg?v=mailboxmelted" width="100%" alt="Uplink — the channel is open. mailboxmelted@gmail.com · github.com/kvbit · ACK expected within 24 hours."/>
 </a>
 
 <!-- EOF -->
