@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="400" viewBox="0 0 1200 400" fill="none" role="img" aria-label="Architecture &#8212; request flows from edge through routes, controllers, services and repositories to PostgreSQL, with telemetry observing every hop.">
+  <!-- 07 // ARCHITECTURE &#8212; living request-flow blueprint. packets traverse the layers -->
+  <rect width="1200" height="400" fill="#020208"/>
+
+  <text x="64" y="60" fill="#3F3F46" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" letter-spacing="8">07 &#8212; ARCHITECTURE</text>
+  <text x="64" y="104" fill="#FAFAFA" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif" font-size="30" font-weight="700" letter-spacing="-1">The path of a request</text>
+  <text x="64" y="132" fill="#52525B" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif" font-size="14">Every hop has one job. No layer reaches past its neighbor.</text>
+
+  <!-- flow spine -->
+  <g font-family="ui-monospace,SFMono-Regular,Menlo,monospace" text-anchor="middle">
+    <!-- stations -->
+    <g>
+      <circle cx="110" cy="250" r="7" stroke="#71717A" stroke-width="1.4"/>
+      <text x="110" y="288" fill="#71717A" font-size="12">edge</text>
+      <text x="110" y="306" fill="#3F3F46" font-size="10">validate</text>
+    </g>
+    <g>
+      <circle cx="330" cy="250" r="7" stroke="#22D3EE" stroke-width="1.4"/>
+      <text x="330" y="288" fill="#E4E4E7" font-size="12">routes</text>
+      <text x="330" y="306" fill="#3F3F46" font-size="10">mount only</text>
+    </g>
+    <g>
+      <circle cx="550" cy="250" r="7" stroke="#67E8F9" stroke-width="1.4"/>
+      <text x="550" y="288" fill="#E4E4E7" font-size="12">controllers</text>
+      <text x="550" y="306" fill="#3F3F46" font-size="10">thin &#183; DTO in, DTO out</text>
+    </g>
+    <g>
+      <circle cx="770" cy="250" r="9" stroke="#8B5CF6" stroke-width="1.8"/>
+      <circle cx="770" cy="250" r="9" fill="none" stroke="#8B5CF6" opacity=".5">
+        <animate attributeName="r" values="9;20" dur="2.4s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values=".5;0" dur="2.4s" repeatCount="indefinite"/>
+      </circle>
+      <text x="770" y="288" fill="#FAFAFA" font-size="12" font-weight="600">services</text>
+      <text x="770" y="306" fill="#3F3F46" font-size="10">the brain &#183; transactions live here</text>
+    </g>
+    <g>
+      <circle cx="990" cy="250" r="7" stroke="#34D399" stroke-width="1.4"/>
+      <text x="990" y="288" fill="#E4E4E7" font-size="12">repositories</text>
+      <text x="990" y="306" fill="#3F3F46" font-size="10">SQL &#183; projections &#183; indexes</text>
+    </g>
+    <!-- db -->
+    <g>
+      <ellipse cx="1140" cy="238" rx="26" ry="8" stroke="#34D399" stroke-opacity=".7" stroke-width="1.2"/>
+      <path d="M1114 238 V258 A26 8 0 0 0 1166 258 V238" stroke="#34D399" stroke-opacity=".7" stroke-width="1.2"/>
+      <text x="1140" y="288" fill="#71717A" font-size="11">postgres</text>
+    </g>
+  </g>
+
+  <!-- links -->
+  <g stroke="#1F1F26" stroke-width="1.4">
+    <line x1="117" y1="250" x2="323" y2="250"/>
+    <line x1="337" y1="250" x2="543" y2="250"/>
+    <line x1="557" y1="250" x2="761" y2="250"/>
+    <line x1="779" y1="250" x2="983" y2="250"/>
+    <line x1="997" y1="250" x2="1112" y2="250"/>
+  </g>
+
+  <!-- request packet, and response returning -->
+  <circle r="3.4" fill="#22D3EE">
+    <animate attributeName="cx" values="110;1140" dur="4s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1"/>
+    <animate attributeName="cy" values="250;250" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.06;.94;1" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  <circle r="2.6" fill="#34D399">
+    <animate attributeName="cx" values="1140;110" dur="4s" begin="2s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1"/>
+    <animate attributeName="cy" values="244;244" dur="4s" begin="2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.06;.94;1" dur="4s" begin="2s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- telemetry arcs watching every hop -->
+  <g stroke="#8B5CF6" stroke-opacity=".3" stroke-width="1" fill="none">
+    <path d="M330 243 Q 550 150 770 243"/>
+    <path d="M550 243 Q 770 165 990 243"/>
+  </g>
+  <text x="660" y="172" text-anchor="middle" fill="#52525B" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" letter-spacing="2">TRACES &#183; SPANS &#183; STRUCTURED LOGS</text>
+  <circle r="2" fill="#8B5CF6"><animateMotion path="M330 243 Q 550 150 770 243" dur="3.4s" repeatCount="indefinite"/></circle>
+  <circle r="2" fill="#C4B5FD"><animateMotion path="M550 243 Q 770 165 990 243" dur="4.2s" repeatCount="indefinite"/></circle>
+
+  <!-- footnote -->
+  <text x="64" y="368" fill="#27272A" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11">// dependency flow is one-way. reversing it is how systems rot.</text>
+</svg>

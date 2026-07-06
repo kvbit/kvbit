@@ -24,7 +24,7 @@ jobs:
       - name: Fetch streak card SVG
         run: |
           curl -fsSL --max-time 120 \
-            "https://github-readme-streak-stats.herokuapp.com/?user=kvbit&theme=dark&hide_border=true&background=0D1117&ring=00FF41&fire=00FF41&currStreakLabel=8B949E&sideLabels=8B949E&dates=484F58" \
+            "https://github-readme-streak-stats.herokuapp.com/?user=kvbit&hide_border=true&background=020208&ring=22D3EE&fire=8B5CF6&currStreakNum=FAFAFA&sideNums=A1A1AA&currStreakLabel=71717A&sideLabels=52525B&dates=3F3F46" \
             -o assets/streak-card.svg
           test -s assets/streak-card.svg
 

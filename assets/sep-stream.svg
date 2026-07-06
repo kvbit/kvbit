@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="70" viewBox="0 0 1200 70" fill="none" role="img" aria-label="">
+  <!-- data-stream separator -->
+  <rect width="1200" height="70" fill="#020208"/>
+  <g stroke-width="1">
+    <line x1="0" y1="28" x2="1200" y2="28" stroke="#18181B"/>
+    <line x1="0" y1="42" x2="1200" y2="42" stroke="#111114"/>
+  </g>
+  <circle cy="28" r="2" fill="#22D3EE">
+    <animate attributeName="cx" values="-10;1210" dur="6s" repeatCount="indefinite"/>
+  </circle>
+  <circle cy="42" r="1.6" fill="#8B5CF6">
+    <animate attributeName="cx" values="1210;-10" dur="8.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cy="28" r="1.4" fill="#34D399">
+    <animate attributeName="cx" values="-10;1210" dur="11s" begin="2s" repeatCount="indefinite"/>
+  </circle>
+  <text x="600" y="39" text-anchor="middle" fill="#27272A" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="9" letter-spacing="4">01001011 01010110</text>
+</svg>

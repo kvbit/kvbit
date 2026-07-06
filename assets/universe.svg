@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" fill="none" role="img" aria-label="Tech universe &#8212; TypeScript and Node.js at the core, orbited by Express, PostgreSQL, Prisma, Redis, Docker, AWS, Zod, Jest and OpenTelemetry.">
+  <!-- 05 // TECH UNIVERSE &#8212; orbital system. core runtime, three rings, drifting satellites -->
+  <defs>
+    <radialGradient id="uvCore" cx=".5" cy=".5" r=".5">
+      <stop stop-color="#22D3EE" stop-opacity=".28"/><stop offset="1" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="uvHue" cx=".5" cy=".5" r=".75">
+      <stop stop-color="#8B5CF6" stop-opacity=".05"/><stop offset="1" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="520" fill="#020208"/>
+  <rect width="1200" height="520" fill="url(#uvHue)"/>
+
+  <text x="64" y="60" fill="#3F3F46" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" letter-spacing="8">05 &#8212; TECH UNIVERSE</text>
+  <text x="64" y="104" fill="#FAFAFA" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif" font-size="30" font-weight="700" letter-spacing="-1">One gravitational center.</text>
+  <text x="64" y="134" fill="#52525B" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif" font-size="15">Everything orbits the runtime.</text>
+
+  <!-- system -->
+  <g transform="translate(700 270)">
+    <circle r="200" fill="url(#uvCore)"/>
+    <!-- rings -->
+    <ellipse rx="110" ry="42" stroke="#22D3EE" stroke-opacity=".3" stroke-width="1" transform="rotate(-14)"/>
+    <ellipse rx="175" ry="70" stroke="#8B5CF6" stroke-opacity=".25" stroke-width="1" transform="rotate(-14)"/>
+    <ellipse rx="245" ry="102" stroke="#3F3F46" stroke-opacity=".5" stroke-width="1" stroke-dasharray="2 6" transform="rotate(-14)"/>
+
+    <!-- core -->
+    <circle r="46" fill="#0A0A12" stroke="#22D3EE" stroke-opacity=".6" stroke-width="1.4"/>
+    <circle r="46" fill="none" stroke="#67E8F9" stroke-width="1" opacity=".5">
+      <animate attributeName="r" values="46;58" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values=".5;0" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <text y="-2" text-anchor="middle" fill="#FAFAFA" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="14" font-weight="600">TypeScript</text>
+    <text y="16" text-anchor="middle" fill="#67E8F9" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11">Node.js</text>
+
+    <!-- inner ring satellites -->
+    <g transform="rotate(-14)">
+      <g>
+        <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="26s" repeatCount="indefinite"/>
+        <g transform="translate(110 0)"><circle r="3.4" fill="#22D3EE"/></g>
+        <g transform="translate(-110 0)"><circle r="3.4" fill="#67E8F9"/></g>
+      </g>
+    </g>
+    <text x="128" y="-38" fill="#E4E4E7" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13">Express</text>
+    <text x="-196" y="46" fill="#E4E4E7" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13">PostgreSQL</text>
+
+    <!-- middle ring satellites -->
+    <g transform="rotate(-14)">
+      <g>
+        <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="40s" repeatCount="indefinite"/>
+        <g transform="translate(175 0)"><circle r="3" fill="#8B5CF6"/></g>
+        <g transform="translate(-175 0)"><circle r="3" fill="#C4B5FD"/></g>
+        <g transform="translate(0 70)"><circle r="3" fill="#8B5CF6"/></g>
+      </g>
+    </g>
+    <text x="196" y="-78" fill="#A1A1AA" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13">Prisma</text>
+    <text x="-262" y="-52" fill="#A1A1AA" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13">Redis</text>
+    <text x="60" y="118" fill="#A1A1AA" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13">Zod</text>
+
+    <!-- outer ring satellites -->
+    <g transform="rotate(-14)">
+      <g>
+        <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="64s" repeatCount="indefinite"/>
+        <g transform="translate(245 0)"><circle r="2.6" fill="#34D399"/></g>
+        <g transform="translate(-245 0)"><circle r="2.6" fill="#71717A"/></g>
+        <g transform="translate(0 102)"><circle r="2.6" fill="#34D399"/></g>
+        <g transform="translate(0 -102)"><circle r="2.6" fill="#71717A"/></g>
+      </g>
+    </g>
+    <text x="266" y="24" fill="#71717A" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="12">AWS</text>
+    <text x="-330" y="86" fill="#71717A" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="12">Docker</text>
+    <text x="140" y="152" fill="#71717A" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="12">Jest</text>
+    <text x="-120" y="-146" fill="#71717A" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="12">OpenTelemetry</text>
+  </g>
+
+  <!-- ring legend, bottom left -->
+  <g font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11">
+    <circle cx="70" cy="410" r="3" fill="#22D3EE"/>
+    <text x="84" y="414" fill="#71717A">core orbit &#8212; daily drivers</text>
+    <circle cx="70" cy="440" r="3" fill="#8B5CF6"/>
+    <text x="84" y="444" fill="#71717A">data &amp; contracts</text>
+    <circle cx="70" cy="470" r="3" fill="#34D399"/>
+    <text x="84" y="474" fill="#71717A">platform &amp; proof</text>
+  </g>
+</svg>

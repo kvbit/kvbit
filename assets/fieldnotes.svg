@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" fill="none" role="img" aria-label="Field notes &#8212; a public engineering log written one day at a time in the 100 days of code journal.">
+  <!-- 10 // FIELD NOTES &#8212; typewriter page floating in the dark. editorial, quiet -->
+  <defs>
+    <linearGradient id="fnInk" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#E4E4E7"/><stop offset="1" stop-color="#67E8F9"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="300" fill="#020208"/>
+
+  <!-- margin column, magazine style -->
+  <text x="120" y="90" fill="#3F3F46" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" letter-spacing="8">10 &#8212; FIELD NOTES</text>
+  <line x1="120" y1="106" x2="120" y2="240" stroke="#1F1F26" stroke-width="1"/>
+  <text x="140" y="130" fill="#52525B" font-family="Georgia,'Times New Roman',serif" font-size="15" font-style="italic">Notes from the build,</text>
+  <text x="140" y="152" fill="#52525B" font-family="Georgia,'Times New Roman',serif" font-size="15" font-style="italic">one day at a time.</text>
+
+  <!-- typewriter body -->
+  <g font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="14">
+    <text x="480" y="96" fill="#27272A">&#9484;&#9472; journal &#183; 100DaysOfCode &#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9488;</text>
+    <text x="480" y="130" fill="#71717A">day_042 <tspan fill="#3F3F46" x="548">&#8212;</tspan> <tspan fill="#E4E4E7" x="572">why transactions belong in services</tspan></text>
+    <text x="480" y="160" fill="#71717A">day_067 <tspan fill="#3F3F46" x="548">&#8212;</tspan> <tspan fill="#E4E4E7" x="572">indexes: the cheapest performance win</tspan></text>
+    <text x="480" y="190" fill="#71717A">day_089 <tspan fill="#3F3F46" x="548">&#8212;</tspan> <tspan fill="#E4E4E7" x="572">tracing a request across every layer</tspan></text>
+    <text x="480" y="224" fill="#34D399">&#9656; read the log &#8212; github.com/kvbit/100DaysOfCode</text>
+    <text x="480" y="256" fill="#27272A">&#9492;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9496;</text>
+  </g>
+
+  <!-- blinking caret at the last entry -->
+  <rect x="960" y="212" width="8" height="15" fill="#22D3EE">
+    <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;.5;.5;1" dur="1.1s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- ink trail flourish -->
+  <path d="M140 200 C 220 240 320 170 440 214" stroke="url(#fnInk)" stroke-opacity=".3" stroke-width="1" fill="none" stroke-dasharray="200" stroke-dashoffset="200">
+    <animate attributeName="stroke-dashoffset" values="200;0;0;200" keyTimes="0;.4;.6;1" dur="8s" repeatCount="indefinite"/>
+  </path>
+</svg>

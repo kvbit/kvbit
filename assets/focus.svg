@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="340" viewBox="0 0 1200 340" fill="none" role="img" aria-label="Current focus &#8212; BCW platform APIs at Studio137, deepening distributed systems and observability.">
+  <!-- 03 // CURRENT FOCUS &#8212; live process monitor. running threads + waveform telemetry -->
+  <defs>
+    <linearGradient id="fcWave" x1="0" y1="0" x2="1200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#22D3EE" stop-opacity=".9"/><stop offset=".5" stop-color="#8B5CF6" stop-opacity=".9"/><stop offset="1" stop-color="#22D3EE" stop-opacity=".9"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="340" fill="#020208"/>
+
+  <text x="64" y="56" fill="#3F3F46" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" letter-spacing="8">03 &#8212; CURRENT FOCUS</text>
+  <text x="64" y="102" fill="#FAFAFA" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif" font-size="34" font-weight="700" letter-spacing="-1">Processes running now</text>
+  <text x="1136" y="56" text-anchor="end" fill="#34D399" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11">&#9679; live<animate attributeName="opacity" values="1;.4;1" dur="2s" repeatCount="indefinite"/></text>
+
+  <!-- process table, monospace, no boxes -->
+  <g font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13">
+    <text x="64" y="150" fill="#27272A">PID</text>
+    <text x="150" y="150" fill="#27272A">PROCESS</text>
+    <text x="700" y="150" fill="#27272A">STATE</text>
+    <text x="880" y="150" fill="#27272A">CPU%</text>
+
+    <text x="64" y="182" fill="#3F3F46">2201</text>
+    <text x="150" y="182" fill="#E4E4E7">bcw-platform &#8212; TypeScript &#183; Express &#183; Prisma &#183; PostgreSQL</text>
+    <text x="700" y="182" fill="#34D399">running</text>
+    <text x="880" y="182" fill="#71717A">87.0</text>
+
+    <text x="64" y="212" fill="#3F3F46">2202</text>
+    <text x="150" y="212" fill="#E4E4E7">auth-hardening &#8212; AWS Cognito &#183; session boundaries</text>
+    <text x="700" y="212" fill="#34D399">running</text>
+    <text x="880" y="212" fill="#71717A">61.2</text>
+
+    <text x="64" y="242" fill="#3F3F46">2203</text>
+    <text x="150" y="242" fill="#E4E4E7">observability &#8212; OpenTelemetry traces &#183; structured logs</text>
+    <text x="700" y="242" fill="#67E8F9">tracing</text>
+    <text x="880" y="242" fill="#71717A">44.8</text>
+
+    <text x="64" y="272" fill="#3F3F46">2204</text>
+    <text x="150" y="272" fill="#E4E4E7">deep-study &#8212; distributed systems &#183; async job design</text>
+    <text x="700" y="272" fill="#C4B5FD">learning</text>
+    <text x="880" y="272" fill="#71717A">23.5</text>
+  </g>
+
+  <!-- cpu bars -->
+  <g>
+    <rect x="960" y="174" width="176" height="3" rx="1.5" fill="#18181B"/>
+    <rect x="960" y="174" width="153" height="3" rx="1.5" fill="#22D3EE"><animate attributeName="width" values="153;140;158;153" dur="5s" repeatCount="indefinite"/></rect>
+    <rect x="960" y="204" width="176" height="3" rx="1.5" fill="#18181B"/>
+    <rect x="960" y="204" width="108" height="3" rx="1.5" fill="#8B5CF6"><animate attributeName="width" values="108;120;98;108" dur="6s" repeatCount="indefinite"/></rect>
+    <rect x="960" y="234" width="176" height="3" rx="1.5" fill="#18181B"/>
+    <rect x="960" y="234" width="79" height="3" rx="1.5" fill="#67E8F9"><animate attributeName="width" values="79;92;70;79" dur="4.4s" repeatCount="indefinite"/></rect>
+    <rect x="960" y="264" width="176" height="3" rx="1.5" fill="#18181B"/>
+    <rect x="960" y="264" width="41" height="3" rx="1.5" fill="#34D399"><animate attributeName="width" values="41;56;36;41" dur="7s" repeatCount="indefinite"/></rect>
+  </g>
+
+  <!-- waveform telemetry -->
+  <g transform="translate(0 306)">
+    <path d="M0 0 Q 30 -14 60 0 T 120 0 T 180 0 T 240 0 T 300 0 T 360 0 T 420 0 T 480 0 T 540 0 T 600 0 T 660 0 T 720 0 T 780 0 T 840 0 T 900 0 T 960 0 T 1020 0 T 1080 0 T 1140 0 T 1200 0 T 1260 0 T 1320 0"
+          stroke="url(#fcWave)" stroke-width="1.5" fill="none" opacity=".55">
+      <animateTransform attributeName="transform" type="translate" from="0 0" to="-120 0" dur="3s" repeatCount="indefinite"/>
+    </path>
+    <path d="M0 0 Q 45 10 90 0 T 180 0 T 270 0 T 360 0 T 450 0 T 540 0 T 630 0 T 720 0 T 810 0 T 900 0 T 990 0 T 1080 0 T 1170 0 T 1260 0 T 1350 0"
+          stroke="#8B5CF6" stroke-opacity=".25" stroke-width="1" fill="none">
+      <animateTransform attributeName="transform" type="translate" from="-180 0" to="0 0" dur="5s" repeatCount="indefinite"/>
+    </path>
+  </g>
+</svg>

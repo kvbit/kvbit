@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" fill="none" role="img" aria-label="Identity &#8212; Jahangir Ahmad, backend engineer based in Srinagar, building at Studio137.">
+  <!-- 01 // IDENTITY &#8212; dossier composition. ghost index, scattered records, orbital mark -->
+  <defs>
+    <linearGradient id="idRule" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#22D3EE"/><stop offset="1" stop-color="#8B5CF6" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="360" fill="#020208"/>
+
+  <!-- ghost index -->
+  <text x="1195" y="330" text-anchor="end" fill="none" stroke="#18181B" stroke-width="1.5" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif" font-size="300" font-weight="800" letter-spacing="-10">01</text>
+
+  <!-- vertical rail -->
+  <rect x="64" y="48" width="2" height="264" fill="url(#idRule)"/>
+  <text x="46" y="200" fill="#3F3F46" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" letter-spacing="6" transform="rotate(-90 46 200)">IDENTITY</text>
+
+  <text x="96" y="82" fill="#34D399" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="12">$ whoami --verbose</text>
+
+  <text x="96" y="146" fill="#FAFAFA" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif" font-size="40" font-weight="700" letter-spacing="-1.4">Engineer of quiet infrastructure.</text>
+  <text x="96" y="182" fill="#71717A" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif" font-size="17">The best backend is the one nobody notices &#8212; until they read the code.</text>
+
+  <!-- scattered records, asymmetric -->
+  <g font-family="ui-monospace,SFMono-Regular,Menlo,monospace">
+    <text x="96" y="248" fill="#3F3F46" font-size="10" letter-spacing="2">CALLSIGN</text>
+    <text x="96" y="270" fill="#E4E4E7" font-size="15">kvbit</text>
+
+    <text x="268" y="248" fill="#3F3F46" font-size="10" letter-spacing="2">COORDINATES</text>
+    <text x="268" y="270" fill="#E4E4E7" font-size="15">34.08&#176;N 74.79&#176;E &#8212; Srinagar</text>
+
+    <text x="580" y="248" fill="#3F3F46" font-size="10" letter-spacing="2">CLOCK</text>
+    <text x="580" y="270" fill="#E4E4E7" font-size="15">UTC+5:30</text>
+
+    <text x="96" y="312" fill="#3F3F46" font-size="10" letter-spacing="2">CURRENT POST</text>
+    <text x="96" y="334" fill="#E4E4E7" font-size="15">Backend Engineer &#8212; Studio137 <tspan fill="#52525B">/ BCW platform</tspan></text>
+
+    <text x="580" y="312" fill="#3F3F46" font-size="10" letter-spacing="2">STATUS</text>
+    <circle cx="586" cy="330" r="4" fill="#34D399"><animate attributeName="opacity" values="1;.25;1" dur="2.4s" repeatCount="indefinite"/></circle>
+    <text x="600" y="334" fill="#34D399" font-size="15">shipping</text>
+  </g>
+
+  <!-- orbital mark -->
+  <g transform="translate(1010 120)">
+    <circle r="52" stroke="#27272A" stroke-width="1"/>
+    <circle r="34" stroke="#22D3EE" stroke-opacity=".35" stroke-width="1" stroke-dasharray="4 7">
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="20s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="3" fill="#22D3EE">
+      <animateMotion path="M0-52 A52 52 0 1 1 -0.1-52" dur="9s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="2" fill="#8B5CF6">
+      <animateMotion path="M0 34 A34 34 0 1 0 0.1 34" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    <text y="6" text-anchor="middle" fill="#52525B" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13">kv</text>
+  </g>
+</svg>

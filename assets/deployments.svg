@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="480" viewBox="0 0 1200 480" fill="none" role="img" aria-label="Deployments &#8212; Arclight code judge, BCW platform, 30 days 30 projects, 100 days of code.">
+  <!-- 06 // DEPLOYMENTS &#8212; launch manifest along a glowing trajectory line -->
+  <defs>
+    <linearGradient id="dpRail" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#22D3EE" stop-opacity="0"/><stop offset=".12" stop-color="#22D3EE"/>
+      <stop offset=".85" stop-color="#8B5CF6"/><stop offset="1" stop-color="#8B5CF6" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="480" fill="#020208"/>
+
+  <text x="64" y="60" fill="#3F3F46" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" letter-spacing="8">06 &#8212; DEPLOYMENTS</text>
+  <text x="64" y="104" fill="#FAFAFA" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif" font-size="30" font-weight="700" letter-spacing="-1">Launch manifest</text>
+
+  <!-- trajectory rail -->
+  <rect x="299" y="80" width="2" height="380" fill="url(#dpRail)"/>
+  <circle cx="300" r="3" fill="#67E8F9">
+    <animate attributeName="cy" values="90;450;90" dur="9s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;1;1;1;0" keyTimes="0;.1;.5;.9;1" dur="9s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- T-01 Arclight -->
+  <g>
+    <circle cx="300" cy="150" r="5" fill="#020208" stroke="#22D3EE" stroke-width="1.6"/>
+    <circle cx="300" cy="150" r="5" fill="none" stroke="#22D3EE" stroke-width="1" opacity=".6">
+      <animate attributeName="r" values="5;14" dur="2.8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values=".6;0" dur="2.8s" repeatCount="indefinite"/>
+    </circle>
+    <text x="240" y="155" text-anchor="end" fill="#3F3F46" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11">T-01</text>
+    <text x="340" y="142" fill="#FAFAFA" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif" font-size="22" font-weight="600" letter-spacing="-.4">Arclight</text>
+    <text x="446" y="142" fill="#22D3EE" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" letter-spacing="1">FLAGSHIP</text>
+    <text x="340" y="166" fill="#71717A" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif" font-size="14">Online code judge &#8212; sandboxed submission pipeline, queued execution, verdict engine.</text>
+    <text x="340" y="188" fill="#3F3F46" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11">Node.js &#183; Express &#183; MongoDB &#8212; github.com/kvbit/Arclight</text>
+  </g>
+
+  <!-- T-02 BCW -->
+  <g>
+    <circle cx="300" cy="248" r="5" fill="#020208" stroke="#34D399" stroke-width="1.6"/>
+    <text x="240" y="253" text-anchor="end" fill="#3F3F46" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11">T-02</text>
+    <text x="340" y="240" fill="#FAFAFA" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif" font-size="22" font-weight="600" letter-spacing="-.4">bcw-platform</text>
+    <text x="500" y="240" fill="#34D399" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" letter-spacing="1">IN PRODUCTION &#183; CLOSED SOURCE</text>
+    <text x="340" y="264" fill="#71717A" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif" font-size="14">Platform APIs at Studio137 &#8212; typed boundaries, migrations, auth, telemetry.</text>
+    <text x="340" y="286" fill="#3F3F46" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11">TypeScript &#183; Prisma &#183; PostgreSQL &#183; AWS Cognito &#183; OpenTelemetry</text>
+  </g>
+
+  <!-- T-03 30Days30Projects -->
+  <g>
+    <circle cx="300" cy="346" r="5" fill="#020208" stroke="#8B5CF6" stroke-width="1.6"/>
+    <text x="240" y="351" text-anchor="end" fill="#3F3F46" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11">T-03</text>
+    <text x="340" y="338" fill="#FAFAFA" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif" font-size="22" font-weight="600" letter-spacing="-.4">30Days30Projects</text>
+    <text x="340" y="362" fill="#71717A" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif" font-size="14">Thirty backend prototypes in thirty days &#8212; velocity as a discipline.</text>
+    <text x="340" y="384" fill="#3F3F46" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11">Node.js &#183; APIs &#8212; github.com/kvbit/30Days30Projects</text>
+  </g>
+
+  <!-- T-04 100DaysOfCode -->
+  <g>
+    <circle cx="300" cy="432" r="5" fill="#020208" stroke="#C4B5FD" stroke-width="1.6"/>
+    <text x="240" y="437" text-anchor="end" fill="#3F3F46" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11">T-04</text>
+    <text x="340" y="426" fill="#FAFAFA" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif" font-size="22" font-weight="600" letter-spacing="-.4">100DaysOfCode</text>
+    <text x="340" y="450" fill="#71717A" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif" font-size="14">A public log of consistency &#8212; github.com/kvbit/100DaysOfCode</text>
+  </g>
+
+  <!-- right margin schematic -->
+  <g transform="translate(1040 180)" stroke="#1F1F26" stroke-width="1">
+    <path d="M0 0 L60 0 L60 60 L120 60" fill="none"/>
+    <path d="M0 120 L40 120 L40 180 L120 180" fill="none"/>
+    <path d="M60 60 L40 120" fill="none"/>
+    <circle cx="0" cy="0" r="3" fill="#22D3EE" stroke="none"/>
+    <circle cx="120" cy="60" r="3" fill="#8B5CF6" stroke="none"/>
+    <circle cx="0" cy="120" r="3" fill="#34D399" stroke="none"/>
+    <circle cx="120" cy="180" r="3" fill="#67E8F9" stroke="none"/>
+    <circle r="2" fill="#67E8F9" stroke="none"><animateMotion path="M0 0 L60 0 L60 60 L120 60" dur="4s" repeatCount="indefinite"/></circle>
+    <circle r="2" fill="#34D399" stroke="none"><animateMotion path="M0 120 L40 120 L40 180 L120 180" dur="5s" repeatCount="indefinite"/></circle>
+  </g>
+</svg>

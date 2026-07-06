@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" fill="none" role="img" aria-label="Engineering philosophy &#8212; four laws: boundaries are sacred, state is a liability, failure is a feature, code is read far more than written.">
+  <!-- 04 // PHILOSOPHY &#8212; laws etched on a diagonal circuit field. staggered, asymmetric -->
+  <defs>
+    <linearGradient id="phG" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#22D3EE"/><stop offset="1" stop-color="#8B5CF6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="420" fill="#020208"/>
+
+  <!-- diagonal circuit traces -->
+  <g stroke="#111114" stroke-width="1">
+    <path d="M-40 420 L300 80 L360 80"/>
+    <path d="M80 420 L420 80 L520 80"/>
+    <path d="M1240 0 L900 340 L820 340"/>
+    <path d="M1140 0 L800 340 L700 340"/>
+  </g>
+  <circle r="2" fill="#22D3EE" opacity=".8"><animateMotion path="M-40 420 L300 80 L360 80" dur="6s" repeatCount="indefinite"/></circle>
+  <circle r="2" fill="#8B5CF6" opacity=".8"><animateMotion path="M1240 0 L900 340 L820 340" dur="7.5s" repeatCount="indefinite"/></circle>
+  <g fill="#27272A">
+    <rect x="296" y="76" width="8" height="8" transform="rotate(45 300 80)"/>
+    <rect x="896" y="336" width="8" height="8" transform="rotate(45 900 340)"/>
+  </g>
+
+  <text x="64" y="60" fill="#3F3F46" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" letter-spacing="8">04 &#8212; ENGINEERING PHILOSOPHY</text>
+
+  <!-- law I : left -->
+  <g>
+    <text x="64" y="136" fill="url(#phG)" font-family="Georgia,'Times New Roman',serif" font-size="42" font-style="italic">I.</text>
+    <text x="120" y="128" fill="#FAFAFA" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif" font-size="24" font-weight="600" letter-spacing="-.5">Boundaries are sacred.</text>
+    <text x="120" y="154" fill="#52525B" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif" font-size="14">Validate at the edges. Trust the interior. Never let a framework leak past a controller.</text>
+  </g>
+
+  <!-- law II : indented right -->
+  <g>
+    <text x="520" y="226" fill="url(#phG)" font-family="Georgia,'Times New Roman',serif" font-size="42" font-style="italic">II.</text>
+    <text x="586" y="218" fill="#FAFAFA" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif" font-size="24" font-weight="600" letter-spacing="-.5">State is a liability.</text>
+    <text x="586" y="244" fill="#52525B" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif" font-size="14">Keep services stateless, transactions small, and every side effect explicit.</text>
+  </g>
+
+  <!-- law III : back left, deeper -->
+  <g>
+    <text x="150" y="316" fill="url(#phG)" font-family="Georgia,'Times New Roman',serif" font-size="42" font-style="italic">III.</text>
+    <text x="230" y="308" fill="#FAFAFA" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif" font-size="24" font-weight="600" letter-spacing="-.5">Failure is a feature.</text>
+    <text x="230" y="334" fill="#52525B" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif" font-size="14">Timeouts, retries, idempotency &#8212; design for the day the network lies to you.</text>
+  </g>
+
+  <!-- law IV : far right -->
+  <g>
+    <text x="640" y="386" fill="url(#phG)" font-family="Georgia,'Times New Roman',serif" font-size="42" font-style="italic">IV.</text>
+    <text x="716" y="378" fill="#FAFAFA" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif" font-size="24" font-weight="600" letter-spacing="-.5">Code is read 100&#215; more than written.</text>
+    <text x="716" y="404" fill="#52525B" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif" font-size="14">Optimize for the reader. Cleverness is a debt someone else repays.</text>
+  </g>
+</svg>

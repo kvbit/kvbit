@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="220" viewBox="0 0 1200 220" fill="none" role="img" aria-label="Open source telemetry &#8212; live signals from the contribution graph.">
+  <!-- 08 // OPEN SIGNALS &#8212; radar sweep + intro to live telemetry below -->
+  <defs>
+    <linearGradient id="sgSweep" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#22D3EE" stop-opacity="0"/><stop offset="1" stop-color="#22D3EE" stop-opacity=".5"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="220" fill="#020208"/>
+
+  <!-- radar -->
+  <g transform="translate(1080 110)">
+    <circle r="72" stroke="#18181B" stroke-width="1"/>
+    <circle r="48" stroke="#18181B" stroke-width="1"/>
+    <circle r="24" stroke="#18181B" stroke-width="1"/>
+    <line x1="-72" y1="0" x2="72" y2="0" stroke="#111114"/>
+    <line x1="0" y1="-72" x2="0" y2="72" stroke="#111114"/>
+    <path d="M0 0 L72 0 A72 72 0 0 0 50.9 -50.9 Z" fill="url(#sgSweep)" opacity=".55">
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="6s" repeatCount="indefinite"/>
+    </path>
+    <circle cx="30" cy="-22" r="2.4" fill="#34D399"><animate attributeName="opacity" values="0;1;0" dur="6s" begin="1.2s" repeatCount="indefinite"/></circle>
+    <circle cx="-40" cy="30" r="2.4" fill="#22D3EE"><animate attributeName="opacity" values="0;1;0" dur="6s" begin="3.6s" repeatCount="indefinite"/></circle>
+    <circle cx="12" cy="52" r="2" fill="#8B5CF6"><animate attributeName="opacity" values="0;1;0" dur="6s" begin="4.8s" repeatCount="indefinite"/></circle>
+  </g>
+
+  <text x="64" y="72" fill="#3F3F46" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" letter-spacing="8">08 &#8212; OPEN SIGNALS</text>
+  <text x="64" y="122" fill="#FAFAFA" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif" font-size="34" font-weight="700" letter-spacing="-1">Every commit is a transmission.</text>
+  <text x="64" y="156" fill="#52525B" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif" font-size="15">Live telemetry from the contribution field, decoded below.</text>
+  <text x="64" y="192" fill="#34D399" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="12">$ tail -f /var/log/github/kvbit.stream<tspan fill="#22D3EE"> &#9612;</tspan></text>
+</svg>
